@@ -6,12 +6,7 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  bool _healthy = false;
-  bool _diabetes = false;
-  bool _obesity = false;
-  bool _hyper = false;
-  bool _pcos = false;
-  bool _stress = false;
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,22 +22,45 @@ class _RegistrationState extends State<Registration> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             // child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(''),
-                  Text("Create your Account"),
-                  Align(alignment: Alignment.topLeft, child: Text('Name')),
-                  TextField(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: Image.asset('assets/logo.png'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 30),
+                  child: Text(
+                    "Create your Account",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Name',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    )),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  Align(alignment: Alignment.topLeft, child: Text('Address')),
-                  Row(
+                ),
+                Align(alignment: Alignment.topLeft, child: Text('Address')),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+
+                      
+                  
                       Container(
                           height: 30,
                           width: 100,
@@ -60,8 +78,11 @@ class _RegistrationState extends State<Registration> {
                           child: Text("Pincode*"))
                     ],
                   ),
-                  Align(alignment: Alignment.topLeft, child: Text('Gender')),
-                  Row(
+                ),
+                Align(alignment: Alignment.topLeft, child: Text('Gender')),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton.icon(
@@ -78,127 +99,32 @@ class _RegistrationState extends State<Registration> {
                           label: Text('Others')),
                     ],
                   ),
-                  Align(
-                      alignment: Alignment.topLeft, child: Text('Looking For')),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Healthy Lifestyle'),
-                    value: _healthy,
-                    onChanged: (value) {
-                      setState(() {
-                        _healthy = !_healthy;
-                      });
-                    },
+                ),
+              
+               
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                       Navigator.of(context).pushNamedAndRemoveUntil(
+                               '/rtwo', (route) => true);
+                      }, 
+                      label: Text("Next"),
+                      icon: Icon(Icons.arrow_right),                      
+                      ),
+                    // child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Navigator.of(context).pushNamedAndRemoveUntil(
+                    //           '/rtwo', (route) => true);
+                    //     },
+                    //     child: Text("Next")),
                   ),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Diabetes Treatment'),
-                    value: _diabetes,
-                    onChanged: (value) {
-                      setState(() {
-                        _diabetes = !_diabetes;
-                      });
-                    },
-                  ),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Obesity Treatment'),
-                    value: _obesity,
-                    onChanged: (value) {
-                      setState(() {
-                        _obesity = !_obesity;
-                      });
-                    },
-                  ),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Hypertension Treatment'),
-                    value: _hyper,
-                    onChanged: (value) {
-                      setState(() {
-                        _hyper = !_hyper;
-                      });
-                    },
-                  ),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('PCOS/PCOD'),
-                    value: _pcos,
-                    onChanged: (value) {
-                      setState(() {
-                        _pcos = !_pcos;
-                      });
-                    },
-                  ),
-                  CheckboxListTile(
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Stress'),
-                    value: _stress,
-                    onChanged: (value) {
-                      setState(() {
-                        _stress = !_stress;
-                      });
-                    },
-                  ),
-                  Align(
-                      alignment: Alignment.topLeft,
-                      child: Text('Health Information(Optional')),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Height")),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Weight")),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Age")),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("HbA1c")),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Random Blood Sugar")),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Others")),
-                    ],
-                  ),
-                  Center(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamedAndRemoveUntil(
-                              '/home', (route) => true);
-                        },
-                        child: Text("Register")),
-                  ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Text("Already have account? Login")),
-                  )
-                ],
-              ),
+                ),
+                
+              ],
+            ),
             // ),
           ),
         ),
