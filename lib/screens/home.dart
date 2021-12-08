@@ -20,6 +20,21 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      drawer: Drawer(),
+        appBar: AppBar(
+          title: Text('Location'),
+          actions: [          
+             Padding(
+               padding: const EdgeInsets.only(right: 20),
+               child: Icon(Icons.wallet_travel),
+             ),
+             Padding(
+               padding: const EdgeInsets.only(right: 20),
+               child: Icon(Icons.notifications),
+             ),
+          ],        
+          backgroundColor: Colors.transparent,
+        ),
       body: pages[i],    
       bottomNavigationBar: new BottomNavigationBar(
         items: [
@@ -51,3 +66,10 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+
+
+
+
+
