@@ -1,3 +1,4 @@
+import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -6,7 +7,6 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
- 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,15 +32,14 @@ class _RegistrationState extends State<Registration> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 30),
-                  child: Text(
-                    "Create your Account",
+                  child: Text(create,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Name',
+                      name,
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     )),
@@ -58,9 +57,6 @@ class _RegistrationState extends State<Registration> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-
-                      
-                  
                       Container(
                           height: 30,
                           width: 100,
@@ -100,20 +96,18 @@ class _RegistrationState extends State<Registration> {
                     ],
                   ),
                 ),
-              
-               
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
                   child: Align(
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                       Navigator.of(context).pushNamedAndRemoveUntil(
-                               '/rtwo', (route) => true);
-                      }, 
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/rtwo', (route) => true);
+                      },
                       label: Text("Next"),
-                      icon: Icon(Icons.arrow_right),                      
-                      ),
+                      icon: Icon(Icons.arrow_right),
+                    ),
                     // child: ElevatedButton(
                     //     onPressed: () {
                     //       Navigator.of(context).pushNamedAndRemoveUntil(
@@ -122,7 +116,6 @@ class _RegistrationState extends State<Registration> {
                     //     child: Text("Next")),
                   ),
                 ),
-                
               ],
             ),
             // ),
