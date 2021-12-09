@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:ecojivan/screens/bottomnav.dart';
+import 'package:ecojivan/screens/doctors.dart';
 import 'package:ecojivan/screens/login.dart';
 import 'package:ecojivan/screens/registerthree.dart';
 import 'package:ecojivan/screens/registertwo.dart';
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
 	return MaterialApp(
-	title: 'Splash Screen',
 	theme: ThemeData(
 		primarySwatch: Colors.brown,
 	),
@@ -26,6 +26,7 @@ Widget build(BuildContext context) {
         '/login': (context) => Login(),
         '/register': (context) => Registration(),
         '/home': (context) => BottomNav(),
+        '/doc': (context) => Doctors(),
         
       },
 	);
