@@ -1,3 +1,4 @@
+import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -12,12 +13,7 @@ class _LoginState extends State<Login> {
     double height = MediaQuery.of(context).size.height;
 
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.grey, Colors.brown],
-      )),
+      decoration: decoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
@@ -32,7 +28,6 @@ class _LoginState extends State<Login> {
                   Container(
                     width: width,
                     height: height * 0.45,
-                    
                   ),
                   Stack(
                     alignment: Alignment.topCenter,
@@ -47,7 +42,7 @@ class _LoginState extends State<Login> {
                                 padding: const EdgeInsets.only(top: 50),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    hintText: 'Email',
+                                    hintText: email,
                                     icon: Icon(Icons.email),
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.0),
@@ -61,7 +56,7 @@ class _LoginState extends State<Login> {
                               TextField(
                                 obscureText: true,
                                 decoration: InputDecoration(
-                                  hintText: 'Password',
+                                  hintText: pass,
                                   icon: Icon(Icons.remove_red_eye),
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -73,33 +68,32 @@ class _LoginState extends State<Login> {
                                 style: ElevatedButton.styleFrom(
                                     textStyle:
                                         TextStyle(fontWeight: FontWeight.bold)),
-                                child: Text('Sign In'),
+                                child: Text(signin),
                                 onPressed: () {
-                                  Navigator.of(context).pushNamedAndRemoveUntil('/records', (route) => true);
+                                  Navigator.of(context).pushNamedAndRemoveUntil(
+                                      '/records', (route) => true);
                                 },
                               ),
                               GestureDetector(
                                 onTap: () async {
                                   await AlertDialog(
-                                    title: Text(
-                                        "Enter your resgistered email id or phone number below"),
+                                    title: Text(enter),
                                     content: TextField(
                                       decoration: InputDecoration(
-                                        hintText: 'Email or Number',
+                                        hintText: phone,
                                         border: OutlineInputBorder(),
                                       ),
                                     ),
                                     actions: <Widget>[
                                       Center(
                                         child: ElevatedButton(
-                                          child: Text("Send OTP"),
+                                          child: Text(otp),
                                           onPressed: () async {
                                             await AlertDialog(
-                                              title: Text(
-                                                  "Enter OTP sent on your registered Email/Phone Number "),
+                                              title: Text(enterotp),
                                               content: TextField(
                                                 decoration: InputDecoration(
-                                                  hintText: 'Email or Number',
+                                                  hintText: phone,
                                                   border: OutlineInputBorder(),
                                                 ),
                                               ),
@@ -142,10 +136,10 @@ class _LoginState extends State<Login> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'Login',
+                              login,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: TertiaryColor,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold),
                             ),
