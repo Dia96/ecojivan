@@ -10,18 +10,12 @@ class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.grey, Colors.brown],
-      )),
+      decoration: decoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            // child: Center(
+            padding: paddingall,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,67 +26,61 @@ class _RegistrationState extends State<Registration> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 30),
-                  child: Text(create,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
+                  child: Text(create, style: bold),
                 ),
                 Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      name,
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    )),
+                    child: Text(name, style: namestyle)),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  padding: paddingtb,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
                   ),
                 ),
-                Align(alignment: Alignment.topLeft, child: Text('Address')),
+                Align(alignment: Alignment.topLeft, child: Text(add)),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  padding: paddingtb,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
                           height: 30,
                           width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("House No*")),
+                          decoration: BoxDecoration(color: TertiaryColor),
+                          child: Text(add1)),
                       Container(
                           height: 30,
                           width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Street*")),
+                          decoration: BoxDecoration(color: TertiaryColor),
+                          child: Text(add2)),
                       Container(
                           height: 30,
                           width: 100,
-                          decoration: BoxDecoration(color: Colors.white),
-                          child: Text("Pincode*"))
+                          decoration: BoxDecoration(color: TertiaryColor),
+                          child: Text(add3))
                     ],
                   ),
                 ),
-                Align(alignment: Alignment.topLeft, child: Text('Gender')),
+                Align(alignment: Alignment.topLeft, child: Text(gender)),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 15),
+                  padding: paddingtb,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.female),
-                          label: Text('Female')),
+                          label: Text(female)),
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.male),
-                          label: Text('Male')),
+                          label: Text(male)),
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.transgender),
-                          label: Text('Others')),
+                          label: Text(trans)),
                     ],
                   ),
                 ),
@@ -105,20 +93,13 @@ class _RegistrationState extends State<Registration> {
                         Navigator.of(context)
                             .pushNamedAndRemoveUntil('/rtwo', (route) => true);
                       },
-                      label: Text("Next"),
+                      label: Text(next),
                       icon: Icon(Icons.arrow_right),
                     ),
-                    // child: ElevatedButton(
-                    //     onPressed: () {
-                    //       Navigator.of(context).pushNamedAndRemoveUntil(
-                    //           '/rtwo', (route) => true);
-                    //     },
-                    //     child: Text("Next")),
                   ),
                 ),
               ],
             ),
-            // ),
           ),
         ),
       ),
