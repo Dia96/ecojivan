@@ -1,3 +1,4 @@
+import 'package:ecojivan/constraint.dart';
 import 'package:ecojivan/screens/consult.dart';
 import 'package:ecojivan/screens/home.dart';
 import 'package:ecojivan/screens/profile.dart';
@@ -22,31 +23,17 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.grey, Colors.brown],
-      )),
+      decoration: decoration,
       child: new Scaffold(
         backgroundColor: Colors.transparent,
-        // drawer: Drawer(
-
-        // ),
-
-        drawer: Drawer(         
+        drawer: Drawer(
           child: Container(
-             decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.grey, Colors.brown],
-      )),
+            decoration: decoration,
             child: ListView(
               children: [
                 UserAccountsDrawerHeader(
-                  accountName: Text("User Name"),
-                  accountEmail: Text("user@gmail.com"),
+                  accountName: Text(username),
+                  accountEmail: Text(useremail),
                   currentAccountPicture: CircleAvatar(
                       backgroundImage: AssetImage('assets/logo.png')),
                   decoration: BoxDecoration(
@@ -55,24 +42,11 @@ class _BottomNavState extends State<BottomNav> {
                       fit: BoxFit.fill,
                     ),
                   ),
-                  // otherAccountsPictures: [
-                  //   CircleAvatar(
-                  //       backgroundColor: Colors.white,
-                  //       backgroundImage: AssetImage("assets/logo.png")),
-                  //   CircleAvatar(
-                  //       backgroundColor: Colors.white,
-                  //       backgroundImage: AssetImage("assets/logo.png")),
-                  // ],
                 ),
-                Text("Services",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),
-                ),
+                Text("Services", style: bold),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.rate_review_rounded),
                     title: Text("Consult Now"),
@@ -81,7 +55,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.rate_review_rounded),
                     title: Text("Order products"),
@@ -90,7 +64,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.production_quantity_limits),
                     title: Text("Buy Subscriptions"),
@@ -99,35 +73,30 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Divider(
                   thickness: 1,
-                  color: Colors.brown,
+                  color: PrimaryColor,
                 ),
-                Text("About",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),               
-                ),
+                Text(about, style: bold),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.details),
-                    title: Text("About us"),
+                    title: Text(aboutus),
                     onTap: () {},
                   ),
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.privacy_tip),
                     title: Text("Privacy Policy"),
                     onTap: () {},
                   ),
                 ),
-                 Card(
+                Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.rule),
                     title: Text("Terms and Conditions"),
@@ -136,7 +105,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.map),
                     title: Text("Our Sitemap"),
@@ -145,17 +114,15 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Divider(
                   thickness: 1,
-                  color: Colors.brown,
+                  color: PrimaryColor,
                 ),
-                Text("Tracker",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),
+                Text(
+                  "Tracker",
+                  style: bold,
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.report),
                     title: Text("Weekly Reports"),
@@ -164,7 +131,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.health_and_safety),
                     title: Text("Diet Plan"),
@@ -173,16 +140,16 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.work_outline),
                     title: Text("Workout Plan"),
                     onTap: () {},
                   ),
                 ),
-                 Card(
+                Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.lock_clock),
                     title: Text("Reminders"),
@@ -191,22 +158,18 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 Divider(
                   thickness: 1,
-                  color: Colors.brown,
+                  color: PrimaryColor,
                 ),
-
-                
-                Text("Settings",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),
+                Text(
+                  "Settings",
+                  style: bold,
                 ),
                 Card(
                   elevation: 10,
-                  color: Colors.brown[200],
+                  color: PrimaryColorLight,
                   child: ListTile(
                     leading: Icon(Icons.settings),
-                    title: Text("Settings"),
+                    title: Text(settings),
                     onTap: () {},
                   ),
                 ),
@@ -215,7 +178,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
         ),
         appBar: AppBar(
-          title: Text('Location'),
+          title: Text(location),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
@@ -233,20 +196,20 @@ class _BottomNavState extends State<BottomNav> {
           backgroundColor: Colors.transparent,
           items: [
             new BottomNavigationBarItem(
-              icon: new Icon(Icons.home, color: Colors.white),
-              title: new Text('Explore', style: TextStyle(color: Colors.white)),
+              icon: new Icon(Icons.home, color: TertiaryColor),
+              title: new Text(bottom1, style: bottomstyle),
             ),
             new BottomNavigationBarItem(
-              icon: new Icon(Icons.upgrade, color: Colors.white),
-              title: new Text('Upgrade', style: TextStyle(color: Colors.white)),
+              icon: new Icon(Icons.upgrade, color: TertiaryColor),
+              title: new Text(bottom2, style: bottomstyle),
             ),
             new BottomNavigationBarItem(
-              icon: new Icon(Icons.rate_review_rounded, color: Colors.white),
-              title: new Text('Consult', style: TextStyle(color: Colors.white)),
+              icon: new Icon(Icons.rate_review_rounded, color: TertiaryColor),
+              title: new Text(bottom3, style: bottomstyle),
             ),
             new BottomNavigationBarItem(
-              icon: new Icon(Icons.person, color: Colors.white),
-              title: new Text('Profile', style: TextStyle(color: Colors.white)),
+              icon: new Icon(Icons.person, color: TertiaryColor),
+              title: new Text(bottom4, style: bottomstyle),
             ),
           ],
           currentIndex: i,
