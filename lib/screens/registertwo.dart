@@ -1,3 +1,4 @@
+import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationTwo extends StatefulWidget {
@@ -15,36 +16,30 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.grey, Colors.brown],
-      )),
+      decoration: decoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              // child: Center(
+              padding: paddingall,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                 
-                  
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
-                    // padding: const EdgeInsets.only(left: 20),
-                    child: Align(alignment: Alignment.topLeft, child: Text('Looking For',
-                    style:
-                            TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    )),
+                    padding:
+                        const EdgeInsets.only(top: 10, bottom: 5, right: 10),
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          looking,
+                          style: namestyle,
+                        )),
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Healthy Lifestyle'),
+                    title: Text(health),
                     value: _healthy,
                     onChanged: (value) {
                       setState(() {
@@ -54,7 +49,7 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Diabetes Treatment'),
+                    title: Text(diab),
                     value: _diabetes,
                     onChanged: (value) {
                       setState(() {
@@ -64,7 +59,7 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Obesity Treatment'),
+                    title: Text(obese),
                     value: _obesity,
                     onChanged: (value) {
                       setState(() {
@@ -74,7 +69,7 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Hypertension Treatment'),
+                    title: Text(hyper),
                     value: _hyper,
                     onChanged: (value) {
                       setState(() {
@@ -84,7 +79,7 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('PCOS/PCOD'),
+                    title: Text(pcos),
                     value: _pcos,
                     onChanged: (value) {
                       setState(() {
@@ -94,7 +89,7 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   ),
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
-                    title: Text('Stress'),
+                    title: Text(stress),
                     value: _stress,
                     onChanged: (value) {
                       setState(() {
@@ -102,24 +97,17 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                       });
                     },
                   ),
-                 
                   Padding(
                     padding: const EdgeInsets.only(top: 10, bottom: 5),
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: ElevatedButton.icon(
-                      onPressed: () {
-                       Navigator.of(context).pushNamedAndRemoveUntil('/rthree', (route) => true);
-                      }, 
-                      label: Text("Next"),
-                      icon: Icon(Icons.arrow_right),                      
+                        onPressed: () {
+                          Navigator.of(context).pushNamedAndRemoveUntil('/rthree', (route) => true);
+                        },
+                        label: Text(next),
+                        icon: Icon(Icons.arrow_right),
                       ),
-                      // ElevatedButton(
-                      //     onPressed: () {
-                      //       Navigator.of(context).pushNamedAndRemoveUntil(
-                      //           '/rthree', (route) => true);
-                      //     },
-                      //     child: Text("Next")),
                     ),
                   ),
                 ],
