@@ -13,12 +13,17 @@ class Home extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Card(
-                elevation: 10,
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  child: Center(child: Text("Diets")),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil('/diet', (route) => true);
+                },
+                child: Card(
+                  elevation: 10,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    child: Center(child: Text("Diets")),
+                  ),
                 ),
               ),
               Card(
