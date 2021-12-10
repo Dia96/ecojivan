@@ -15,11 +15,6 @@ class _DoctorsState extends State<Doctors> {
         elevation: 10,
         child: Column(
           children: [
-            // ListTile(
-            //   title: Text(heading),
-            //   subtitle: Text(subheading),
-            //   trailing: Icon(Icons.favorite_outline),
-            // ),
             Row(
               children: [
                 Column(
@@ -33,7 +28,7 @@ class _DoctorsState extends State<Doctors> {
                           child: Container(
                               height: 100.0,
                               width: 90.0,
-                              color: Colors.brown,
+                              color: PrimaryColor,
                               child: Image.asset(
                                 'assets/logo.png',
                                 fit: BoxFit.cover,
@@ -44,15 +39,16 @@ class _DoctorsState extends State<Doctors> {
                     Padding(
                       padding: const EdgeInsets.only(left: 15),
                       child: Card(
-                        
                         elevation: 10,
                         child: Container(
-                          color: Colors.brown,
-                          height: 30,
-                          width: 90,
-                          child: Center(child: Text(exp,
-                          style: TextStyle(color: Colors.white),
-                          ))),
+                            color: PrimaryColor,
+                            height: 30,
+                            width: 90,
+                            child: Center(
+                                child: Text(
+                              exp,
+                              style: TextStyle(color: TertiaryColor),
+                            ))),
                       ),
                     )
                   ],
@@ -61,53 +57,47 @@ class _DoctorsState extends State<Doctors> {
                   padding: EdgeInsets.only(left: 20, top: 20),
                   child: Column(
                     children: [
-                      Container(                     
+                      Container(
                         alignment: Alignment.centerLeft,
-                        child: Text(hospital, style: TextStyle(
-                          fontSize: 20
-                        ),),
+                        child: Text(
+                          hospital,
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                      Container(                     
+                      Container(
                         alignment: Alignment.centerLeft,
                         child: Text(location),
                       ),
-                     Container(                     
+                      Container(
                         alignment: Alignment.centerLeft,
                         child: Text(docname,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                        )
-                        ),
-                        
+                            style: bold
+                                ),
                       ),
                       Container(
-                        //padding: EdgeInsets.all(16.0),
                         alignment: Alignment.centerLeft,
                         child: Text(designation),
                       ),
                       Container(
-                        //padding: EdgeInsets.all(16.0),
                         alignment: Alignment.centerLeft,
                         child: Text(price),
                       ),
-                      ElevatedButton(
-                          onPressed: () {}, child: Text(consult))
+                      ElevatedButton(onPressed: () {}, child: Text(consult))
                     ],
                   ),
                 ),
               ],
-            ),       
-                Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Align(
-                    alignment: Alignment.bottomRight,
-                    child: TextButton(
-                      child:  Text(more),
-                      onPressed: () {},
-                    ),
-                  ),
-                )             
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: TextButton(
+                  child: Text(more),
+                  onPressed: () {},
+                ),
+              ),
+            )
           ],
         ));
   }
@@ -115,7 +105,7 @@ class _DoctorsState extends State<Doctors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(backgroundColor: Colors.black45),
+        appBar: AppBar(backgroundColor: AppColor),
         body: Container(
           padding: EdgeInsets.all(16.0),
           child: SingleChildScrollView(
