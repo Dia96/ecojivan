@@ -32,7 +32,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Body Pain'),
@@ -45,7 +45,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Vomiting'),
@@ -58,7 +58,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('a'),
@@ -71,7 +71,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text(acne),
@@ -84,7 +84,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Fever'),
@@ -97,7 +97,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Sneezing'),
@@ -110,7 +110,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text(runny),
@@ -123,7 +123,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Headache'),
@@ -136,7 +136,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Cough'),
@@ -149,7 +149,7 @@ class Consult extends StatelessWidget {
                     child: Container(
                         height: 40.0,
                         width: 40.0,
-                        color: Colors.brown,
+                        color: PrimaryColor,
                         child: Image.asset('assets/logo.png')),
                   ),
                   title: Text('Loose Motion'),
