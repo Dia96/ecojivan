@@ -25,7 +25,7 @@ class _VerificationState extends State<Verification> {
   }
   Widget build(BuildContext context) {
     return Container(
-      decoration: backgrounddecoration,
+      decoration: gradientdecoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SafeArea(
