@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 100,
                   width: 100,
-                  child: Center(child: Text("Healthy Recipies")),
+                  child: Center(child: Text("Healthy Recipes")),
                 ),
               ),
             ],

@@ -1,6 +1,6 @@
 import 'package:ecojivan/constraint.dart';
 import 'package:ecojivan/screens/nutrition.dart';
-import 'package:ecojivan/screens/recipies.dart';
+import 'package:ecojivan/screens/recipes.dart';
 import 'package:flutter/material.dart';
 
 class MainCollapsingToolbar extends StatefulWidget {
@@ -36,7 +36,7 @@ class _MainCollapsingToolbarState extends State<MainCollapsingToolbar> {
                     unselectedLabelColor: Colors.grey,
                     tabs: [
                       Tab(icon: Icon(Icons.info), text: nutrition),
-                      Tab(icon: Icon(Icons.food_bank_rounded), text: recipie),
+                      Tab(icon: Icon(Icons.food_bank_rounded), text: recipe),
                     ],
                   ),
                 ),

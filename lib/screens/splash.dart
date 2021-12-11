@@ -13,7 +13,7 @@ void initState() {
 	super.initState();
 	Timer(Duration(seconds: 3),
 		()=>
-    Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false),
+    Navigator.of(context).pushNamedAndRemoveUntil('/verification', (route) => false),
 		);
 }
 @override

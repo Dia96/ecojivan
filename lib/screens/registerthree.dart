@@ -62,14 +62,14 @@ class _RegistrationThreeState extends State<RegistrationThree> {
                     child: DropdownSearch<String>(
                         mode: Mode.MENU,
                         items: [
-                          "30Km",
-                          "31Km",
-                          "32Km",
-                          '33Km',
-                          "34Km",
-                          "35Km",
-                          "36Km",
-                          '37Km'
+                          "30kg",
+                          "31Kg",
+                          "32Kg",
+                          '33Kg',
+                          "34Kg",
+                          "35Kg",
+                          "36Kg",
+                          '37Kg'
                         ],
                         label: weight,
                         selectedItem: selectweight),

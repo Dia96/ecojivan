@@ -50,8 +50,6 @@ class _VerificationState extends State<Verification> {
                       }
                       if (tn.isValidLength) {
                         show();
-                        // Navigator.of(context).pushNamedAndRemoveUntil(
-                        //     '/register', (route) => false);
                       }
                     },
                     //custom validation
@@ -72,14 +70,16 @@ class _VerificationState extends State<Verification> {
                       padding: const EdgeInsets.only(bottom: 20),
                       child: PinEntryTextField(
                         onSubmit: (String pin) {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  title: Text("Pin"),
-                                  content: Text('Pin entered is $pin'),
-                                );
-                              }); 
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                             '/register', (route) => false);
+                          // showDialog(
+                          //     context: context,
+                          //     builder: (context) {
+                          //       return AlertDialog(
+                          //         title: Text("Pin"),
+                          //         content: Text('Pin entered is $pin'),
+                          //       );
+                          //     }); 
                         }, 
                       ),
                     ),

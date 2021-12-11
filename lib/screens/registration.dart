@@ -32,37 +32,37 @@ class _RegistrationState extends State<Registration> {
                     alignment: Alignment.topLeft,
                     child: Text(name, style: namestyle)),
                 Padding(
-                  padding: paddingtb,
+                  padding: bottom,
                   child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                    ),
+                    // decoration: InputDecoration(
+                    //   border: OutlineInputBorder(),
+                    // ),
                   ),
                 ),
-                Align(alignment: Alignment.topLeft, child: Text(add)),
-                Padding(
-                  padding: paddingtb,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: TertiaryColor),
-                          child: Text(add1)),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: TertiaryColor),
-                          child: Text(add2)),
-                      Container(
-                          height: 30,
-                          width: 100,
-                          decoration: BoxDecoration(color: TertiaryColor),
-                          child: Text(add3))
-                    ],
-                  ),
-                ),
+                // Align(alignment: Alignment.topLeft, child: Text(add)),
+                // Padding(
+                //   padding: paddingtb,
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //     children: [
+                //       Container(
+                //           height: 30,
+                //           width: 100,
+                //           decoration: BoxDecoration(color: TertiaryColor),
+                //           child: Text(add1)),
+                //       Container(
+                //           height: 30,
+                //           width: 100,
+                //           decoration: BoxDecoration(color: TertiaryColor),
+                //           child: Text(add2)),
+                //       Container(
+                //           height: 30,
+                //           width: 100,
+                //           decoration: BoxDecoration(color: TertiaryColor),
+                //           child: Text(add3))
+                //     ],
+                //   ),
+                // ),
                 Align(alignment: Alignment.topLeft, child: Text(gender)),
                 Padding(
                   padding: paddingtb,
