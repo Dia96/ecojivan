@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 import 'package:the_country_number_widgets/the_country_number_widgets.dart';
@@ -7,7 +5,6 @@ import 'package:the_country_number_widgets/the_country_number_widgets.dart';
 import '../constraint.dart';
 
 class Verification extends StatefulWidget {
-  
   @override
   State<Verification> createState() => _VerificationState();
 }
@@ -15,47 +12,69 @@ class Verification extends StatefulWidget {
 class _VerificationState extends State<Verification> {
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       decoration: backgrounddecoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(enterphone, style: phoneverify,),
-                Padding(
-                  padding: paddingall,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 10, right: 10),
-                    decoration: countryinput,
-                    child: TheCountryNumberInput(
-                      TheCountryNumber().parseNumber(iso2Code: "IN"),
-                      onChanged: (tn){
-  
-                        if(tn.isNotANumber()){
-                          return;
-                        }
-                        if(tn.isValidLength){
-                           Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false);
-                        }
-                      },
-                      //custom validation
-                      customValidator: (tn){
-                        final enteredNumber = tn.number;
-                        //do something
-                        return null;
-                      },
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                enterphone,
+                style: phoneverify,
+              ),
+              Padding(
+                padding: paddingall,
+                child: Container(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  decoration: countryinput,
+                  child: TheCountryNumberInput(
+                    TheCountryNumber().parseNumber(iso2Code: "IN"),
+                    onChanged: (tn) {
+                      if (tn.isNotANumber()) {
+                        return;
+                      }
+                      if (tn.isValidLength) {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/register', (route) => false);
+                      }
+                    },
+                    //custom validation
+                    customValidator: (tn) {
+                      final enteredNumber = tn.number;
+                      //do something
+                      return null;
+                    },
+                  ),
+                ),
+              ),
+              Column(
+                children: [
+                  Text(enterotp, style: otpverify),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: PinEntryTextField(
+                      onSubmit: (String pin) {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Text("Pin"),
+                                content: Text('Pin entered is $pin'),
+                              );
+                            }); //end showDialog()
+                      }, // end onSubmit
                     ),
                   ),
-                ),                
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         ),
+      ),
     );
-    
   }
 }
 
