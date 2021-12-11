@@ -10,7 +10,19 @@ class Verification extends StatefulWidget {
 }
 
 class _VerificationState extends State<Verification> {
+  var _showOtp;
+  
   @override
+  void initState() {
+    _showOtp = false;
+    super.initState();
+  }
+
+  void show() {
+    setState(() {
+      _showOtp = !_showOtp;
+    });
+  }
   Widget build(BuildContext context) {
     return Container(
       decoration: backgrounddecoration,
@@ -37,8 +49,9 @@ class _VerificationState extends State<Verification> {
                         return;
                       }
                       if (tn.isValidLength) {
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            '/register', (route) => false);
+                        show();
+                        // Navigator.of(context).pushNamedAndRemoveUntil(
+                        //     '/register', (route) => false);
                       }
                     },
                     //custom validation
@@ -50,25 +63,29 @@ class _VerificationState extends State<Verification> {
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  Text(enterotp, style: otpverify),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: PinEntryTextField(
-                      onSubmit: (String pin) {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: Text("Pin"),
-                                content: Text('Pin entered is $pin'),
-                              );
-                            }); //end showDialog()
-                      }, // end onSubmit
+              Visibility(
+               
+                child: Column(
+                  children: [
+                    Text(enterotp, style: otpverify),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: PinEntryTextField(
+                        onSubmit: (String pin) {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text("Pin"),
+                                  content: Text('Pin entered is $pin'),
+                                );
+                              }); 
+                        }, 
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                visible:_showOtp,
               ),
             ],
           ),
