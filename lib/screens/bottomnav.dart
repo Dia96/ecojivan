@@ -28,7 +28,7 @@ class _BottomNavState extends State<BottomNav> {
         backgroundColor: Colors.transparent,
         drawer: Drawer(
           child: Container(
-            decoration: decoration,
+            decoration: BoxDecoration(color: backColor),
             child: ListView(
               children: [
                 UserAccountsDrawerHeader(
@@ -43,95 +43,104 @@ class _BottomNavState extends State<BottomNav> {
                     ),
                   ),
                 ),
-                Text("Services", style: bold),
+                Padding(
+                 padding: drawertitle,
+                  child: Text("Services", style: bold),
+                ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.rate_review_rounded),
+                    leading: Icon(Icons.rate_review_rounded, color: buttonColor,),
                     title: Text("Consult Now"),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.rate_review_rounded),
+                    leading: Icon(Icons.rate_review_rounded, color: buttonColor,),
                     title: Text("Order products"),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.production_quantity_limits),
+                    leading: Icon(Icons.production_quantity_limits, color: buttonColor,),
                     title: Text("Buy Subscriptions"),
                     onTap: () {},
                   ),
                 ),
-                Divider(
-                  thickness: 1,
-                  color: PrimaryColor,
+                // Divider(
+                //   thickness: 1,
+                //   color: PrimaryColor,
+                // ),
+                Padding(
+                  padding: drawertitle,
+                  child: Text(about, style: bold),
                 ),
-                Text(about, style: bold),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.details),
+                    leading: Icon(Icons.details, color: buttonColor,),
                     title: Text(aboutus),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.privacy_tip),
+                    leading: Icon(Icons.privacy_tip, color: buttonColor,),
                     title: Text("Privacy Policy"),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.rule),
+                    leading: Icon(Icons.rule, color: buttonColor,),
                     title: Text("Terms and Conditions"),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.map),
+                    leading: Icon(Icons.map, color: buttonColor,),
                     title: Text("Our Sitemap"),
                     onTap: () {},
                   ),
                 ),
-                Divider(
-                  thickness: 1,
-                  color: PrimaryColor,
-                ),
-                Text(
-                  "Tracker",
-                  style: bold,
+                // Divider(
+                //   thickness: 1,
+                //   color: PrimaryColor,
+                // ),
+                Padding(
+                 padding: drawertitle,
+                  child: Text(
+                    "Tracker",
+                    style: bold,
+                  ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
-                    leading: Icon(Icons.report),
+                    leading: Icon(Icons.report, color: buttonColor,),
                     title: Text("Weekly Reports"),
                     onTap: () {},
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
                     leading: Icon(Icons.health_and_safety),
                     title: Text("Diet Plan"),
@@ -139,8 +148,8 @@ class _BottomNavState extends State<BottomNav> {
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
                     leading: Icon(Icons.work_outline),
                     title: Text("Workout Plan"),
@@ -148,25 +157,27 @@ class _BottomNavState extends State<BottomNav> {
                   ),
                 ),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: backColor,
                   child: ListTile(
                     leading: Icon(Icons.lock_clock),
                     title: Text("Reminders"),
                     onTap: () {},
                   ),
                 ),
-                Divider(
-                  thickness: 1,
-                  color: PrimaryColor,
-                ),
-                Text(
+                // Divider(
+                //   thickness: 1,
+                //   color: PrimaryColor,
+                // ),
+                Padding(
+                  padding: drawertitle,
+                child: Text(
                   "Settings",
                   style: bold,
-                ),
+                ),),
                 Card(
-                  elevation: 10,
-                  color: PrimaryColorLight,
+                  elevation: 5,
+                  color: TertiaryColor,
                   child: ListTile(
                     leading: Icon(Icons.settings),
                     title: Text(settings),
@@ -178,6 +189,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
         ),
         appBar: AppBar(
+          
           title: Text(location),
           actions: [
             Padding(
@@ -189,36 +201,42 @@ class _BottomNavState extends State<BottomNav> {
               child: Icon(Icons.notifications),
             ),
           ],
-          backgroundColor: Colors.transparent,
+          flexibleSpace: Container(
+            decoration: gradientdecoration,
+          ),
+          //backgroundColor: Colors.transparent,
         ),
         body: pages[i],
-        bottomNavigationBar: new BottomNavigationBar(
-          backgroundColor: Colors.transparent,
-          items: [
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.home, color: TertiaryColor),
-              title: new Text(bottom1, style: bottomstyle),
-            ),
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.upgrade, color: TertiaryColor),
-              title: new Text(bottom2, style: bottomstyle),
-            ),
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.rate_review_rounded, color: TertiaryColor),
-              title: new Text(bottom3, style: bottomstyle),
-            ),
-            new BottomNavigationBarItem(
-              icon: new Icon(Icons.person, color: TertiaryColor),
-              title: new Text(bottom4, style: bottomstyle),
-            ),
-          ],
-          currentIndex: i,
-          type: BottomNavigationBarType.fixed,
-          onTap: (index) {
-            setState(() {
-              i = index;
-            });
-          },
+        bottomNavigationBar: Container(
+          decoration: gradientdecoration,
+          child: new BottomNavigationBar(
+            backgroundColor: Colors.transparent,
+            items: [
+              new BottomNavigationBarItem(
+                icon: new Icon(Icons.home, color: TertiaryColor),
+                title: new Text(bottom1, style: bottomstyle),
+              ),
+              new BottomNavigationBarItem(
+                icon: new Icon(Icons.production_quantity_limits, color: TertiaryColor),
+                title: new Text(bottom2, style: bottomstyle),
+              ),
+              new BottomNavigationBarItem(
+                icon: new Icon(Icons.rate_review_rounded, color: TertiaryColor),
+                title: new Text(bottom3, style: bottomstyle),
+              ),
+              new BottomNavigationBarItem(
+                icon: new Icon(Icons.person, color: TertiaryColor),
+                title: new Text(bottom4, style: bottomstyle),
+              ),
+            ],
+            currentIndex: i,
+            type: BottomNavigationBarType.fixed,
+            onTap: (index) {
+              setState(() {
+                i = index;
+              });
+            },
+          ),
         ),
       ),
     );
