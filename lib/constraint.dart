@@ -21,7 +21,7 @@ const backgroundgradient = LinearGradient(
 );
 
 const countryinput = BoxDecoration(
-  color: PrimaryColor,
+  color: TertiaryColor,
   borderRadius: BorderRadius.only(
     topLeft: const Radius.circular(10.0),
     topRight: const Radius.circular(10.0),
@@ -58,10 +58,10 @@ const bold = TextStyle(
 const phoneverify = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.bold,
-    color: PrimaryColor,
+    color: TertiaryColor,
     decoration: TextDecoration.none);
 const otpverify = TextStyle(
-    fontSize: 15, color: PrimaryColor, decoration: TextDecoration.none);
+    fontSize: 15, color: TertiaryColor, decoration: TextDecoration.none);
 const namestyle = TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
 const bottomstyle = TextStyle(color: TertiaryColor);
 
