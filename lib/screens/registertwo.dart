@@ -3,7 +3,7 @@ import 'package:ecojivan/constraint.dart';
 import 'package:ecojivan/screens/multichip.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
- import 'package:multiselectchipgroup/multiselectchipgroup.dart';
+import 'package:multiselectchipgroup/multiselectchipgroup.dart';
 
 class RegistrationTwo extends StatefulWidget {
   @override
@@ -116,53 +116,39 @@ class _RegistrationTwoState extends State<RegistrationTwo> {
                   //   ),
                   // ),
 
-
                   MultiSelectChipGroup(
-              items: [
-                health,
-                diab,
-                obese,
-                hyper,
-                pcos,
-                stress
-                
-                
-              ],
-             
-              onSelectionChanged: (values) {
-                print(values);
-              },
-              horizontalChipSpacing: 10,
-              selectedColor: Colors.green,
-              disabledColor: Colors.white,
-              leftCommonIcon: Icons.perm_identity,
-              leftIcons: [
-                Icons.alarm,
-                Icons.ac_unit,
-                Icons.accessibility,
-                Icons.account_balance,
-                Icons.perm_identity,
-                Icons.perm_identity,
-              ],
-            ),
+                    items: [health, diab, obese, hyper, pcos, stress],
+                    onSelectionChanged: (values) {
+                      print(values);
+                    },
+                    horizontalChipSpacing: 10,
+                    selectedColor: Colors.green,
+                    disabledColor: Colors.white,
+                    leftCommonIcon: Icons.perm_identity,
+                    leftIcons: [
+                      Icons.alarm,
+                      Icons.ac_unit,
+                      Icons.accessibility,
+                      Icons.account_balance,
+                      Icons.perm_identity,
+                      Icons.perm_identity,
+                    ],
+                  ),
 
-             Padding(
+                  Padding(
                     padding: const EdgeInsets.only(top: 10, bottom: 5),
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: ElevatedButton.icon(
                         onPressed: () {
-                          Navigator.of(context).pushNamedAndRemoveUntil('/rthree', (route) => true);
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              '/rthree', (route) => true);
                         },
                         label: Text(next),
                         icon: Icon(Icons.arrow_right),
                       ),
                     ),
                   ),
-
-
-
-
                 ],
               ),
               // ),
