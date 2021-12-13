@@ -1,13 +1,15 @@
 import 'dart:async';
-import 'package:ecojivan/extra.dart';
 import 'package:ecojivan/screens/bottomnav.dart';
+import 'package:ecojivan/screens/consult.dart';
 import 'package:ecojivan/screens/diet.dart';
 import 'package:ecojivan/screens/doctors.dart';
 import 'package:ecojivan/screens/edit.dart';
 import 'package:ecojivan/screens/login.dart';
+import 'package:ecojivan/screens/product.dart';
 import 'package:ecojivan/screens/registerthree.dart';
 import 'package:ecojivan/screens/registertwo.dart';
 import 'package:ecojivan/screens/registration.dart';
+import 'package:ecojivan/screens/reports.dart';
 import 'package:ecojivan/screens/sliverappbar.dart';
 import 'package:ecojivan/screens/splash.dart';
 import 'package:ecojivan/screens/verification.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/verification': (context) => Verification(),
         '/register': (context) => Registration(),
-        '/rtwo': (context) => RegistrationTwo(),
+        //'/rtwo': (context) => RegistrationTwo(),
         '/rthree': (context) => RegistrationThree(),
         //'/login': (context) => Login(),
         '/home': (context) => BottomNav(),
@@ -39,6 +41,9 @@ class MyApp extends StatelessWidget {
         '/edit': (context) => EditProfile(),
         '/diet': (context) => Diet(),
         '/sliver': (context) => MainCollapsingToolbar(),
+        '/consult': (context) => Consult(),
+        '/product': (context) => Product(),
+        '/reports': (context) => WeeklyReports(),
       },
     );
   }
