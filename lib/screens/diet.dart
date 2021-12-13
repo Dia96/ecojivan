@@ -34,160 +34,119 @@ class _DietState extends State<Diet> {
                 name,
                 style: bold,
               ),
-
-              Card(
-                color: Colors.transparent,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // Card(
+              //   color: Colors.transparent,
+                //child: 
+                // Padding(
+                //   padding: const EdgeInsets.all(15.0),
+                  //child: 
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: paddingall,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              diet1,
+                              style: bold,
+                            ),
+                            Text(
+                              cal,
+                              style: bold,
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: top,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                          },
+                          child: Card(
+                            child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage('assets/logo.png'),
+                                ),
+                                title: Text(foodname),
+                                subtitle: Text(quantity),
+                                trailing: Text(cal)),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: top,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                '/sliver', (route) => true);
+                          },
+                          child: Card(
+                            child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage('assets/logo.png'),
+                                ),
+                                title: Text(foodname),
+                                subtitle: Text(quantity),
+                                trailing: Text(cal)),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: top,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamedAndRemoveUntil(
+                                '/sliver', (route) => true);
+                          },
+                          child: Card(
+                            child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage('assets/logo.png'),
+                                ),
+                                title: Text(foodname),
+                                subtitle: Text(quantity),
+                                trailing: Text(cal)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+               // ),
+              //),
+              Padding(
+                padding: paddingall,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    diet1,
-                    style: bold,
-                  ),
-                  Text(
-                    cal,
-                    style: bold,
-                  )
-                ],
-              ),
-                   Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
+                    Text(
+                      diet2,
+                      style: bold,
                     ),
-                  ),
-                ),
-              ),
-                   Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
-                  ),
-                ),
-              ),
-                   Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
-                  ),
-                ),
-              ),
+                    Text(
+                      cal,
+                      style: bold,
+                    )
                   ],
                 ),
               ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    diet2,
-                    style: bold,
-                  ),
-                  Text(
-                    cal,
-                    style: bold,
-                  )
-                ],
-              ),
-             Padding(
+              Padding(
                 padding: top,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
                   },
                   child: Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
-                  ),
-                ),
-              ),
-             Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    diet3,
-                    style: bold,
-                  ),
-                  Text(
-                    cal,
-                    style: bold,
-                  )
-                ],
-              ),
-             
-             Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
                   ),
                 ),
               ),
@@ -195,115 +154,173 @@ class _DietState extends State<Diet> {
                 padding: top,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
                   },
                   child: Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
                   ),
                 ),
               ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    diet4,
-                    style: bold,
-                  ),
-                  Text(
-                    cal,
-                    style: bold,
-                  )
-                ],
-              ),
               Padding(
-                padding: top,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
-                  },
-                  child: Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
+                padding: paddingall,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      diet3,
+                      style: bold,
                     ),
-                  ),
+                    Text(
+                      cal,
+                      style: bold,
+                    )
+                  ],
                 ),
               ),
               Padding(
                 padding: top,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
                   },
                   child: Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
                   ),
                 ),
               ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    diet5,
-                    style: bold,
-                  ),
-                  Text(
-                    cal,
-                    style: bold,
-                  )
-                ],
-              ),
-             Padding(
+              Padding(
                 padding: top,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
                   },
                   child: Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
-                    ),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
                   ),
                 ),
               ),
-             Padding(
+              Padding(
+                padding: paddingall,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      diet4,
+                      style: bold,
+                    ),
+                    Text(
+                      cal,
+                      style: bold,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
                 padding: top,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil('/sliver', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
                   },
                   child: Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/logo.png'),
-                      ),
-                      title: Text(foodname),
-                      subtitle: Text(quantity),
-                      trailing: Text(cal)
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: top,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
+                  },
+                  child: Card(
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: paddingall,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      diet5,
+                      style: bold,
                     ),
+                    Text(
+                      cal,
+                      style: bold,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: top,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
+                  },
+                  child: Card(
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: top,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/sliver', (route) => true);
+                  },
+                  child: Card(
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage('assets/logo.png'),
+                        ),
+                        title: Text(foodname),
+                        subtitle: Text(quantity),
+                        trailing: Text(cal)),
                   ),
                 ),
               ),
