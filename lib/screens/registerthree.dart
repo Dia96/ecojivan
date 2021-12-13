@@ -121,10 +121,6 @@ class _RegistrationThreeState extends State<RegistrationThree> {
                           child: Text(reg)),
                     ),
                   ),
-                  Center(
-                    child: GestureDetector(
-                        onTap: () {}, child: Text(existinguser)),
-                  )
                 ],
               ),
             ),

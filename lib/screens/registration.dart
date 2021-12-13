@@ -1,5 +1,6 @@
 import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
+import 'package:multiselectchipgroup/multiselectchipgroup.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -63,6 +64,8 @@ class _RegistrationState extends State<Registration> {
                 //     ],
                 //   ),
                 // ),
+
+                
                 Align(alignment: Alignment.topLeft, child: Text(gender)),
                 Padding(
                   padding: paddingtb,
@@ -84,6 +87,36 @@ class _RegistrationState extends State<Registration> {
                     ],
                   ),
                 ),
+
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 10, bottom: 5, right: 10),
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          looking,
+                          style: namestyle,
+                        )),
+                  ),
+
+                MultiSelectChipGroup(
+                    items: [health, diab, obese, hyper, pcos, stress],
+                    onSelectionChanged: (values) {
+                      print(values);
+                    },
+                    horizontalChipSpacing: 10,
+                    selectedColor: Colors.green,
+                    disabledColor: Colors.white,
+                    leftCommonIcon: Icons.perm_identity,
+                    leftIcons: [
+                      Icons.alarm,
+                      Icons.ac_unit,
+                      Icons.accessibility,
+                      Icons.account_balance,
+                      Icons.perm_identity,
+                      Icons.perm_identity,
+                    ],
+                  ),  
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
                   child: Align(
@@ -91,7 +124,7 @@ class _RegistrationState extends State<Registration> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamedAndRemoveUntil('/rtwo', (route) => true);
+                            .pushNamedAndRemoveUntil('/rthree', (route) => true);
                       },
                       label: Text(next),
                       icon: Icon(Icons.arrow_right),
