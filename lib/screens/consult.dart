@@ -41,91 +41,110 @@ class _ConsultState extends State<Consult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              'Select your Concern',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Expanded(
-            child: SafeArea(
-              child: SearchBar<Post>(
-                searchBarPadding: EdgeInsets.symmetric(horizontal: 10),
-                headerPadding: EdgeInsets.symmetric(horizontal: 10),
-                listPadding: EdgeInsets.symmetric(horizontal: 10),
-                onSearch: _getALlPosts,
-                searchBarController: _searchBarController,
-                onError: (error) => Text('ERROR: ${error.toString()}'),
-                cancellationWidget: Text("Cancel"),
-                emptyWidget: Text("empty"),
-                indexedScaledTileBuilder: (int index) =>
-                    ScaledTile.count(1, index.isEven ? 2 : 1),
-                header: SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text(
-                          'Most selected Issues',
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MultiSelectChipGroup(
-                        items: [fever, gas, motion, blocked, sneeze, acne, rash, period, spots, pregnancy, darkcircle, vomit, headache, constipation, runny, abdominal, hairfall, cough],
-                        onSelectionChanged: (values) {
-                          print(values);
-                        },
-                        horizontalChipSpacing: 10,
-                        selectedColor: Colors.green,
-                        disabledColor: Colors.white,
-                        leftCommonIcon: Icons.perm_identity,
-                        leftIcons: [
-                          Icons.alarm,
-                          Icons.ac_unit,
-                          Icons.accessibility,
-                          Icons.account_balance,
-                          Icons.perm_identity,
-                          Icons.perm_identity,
-                          Icons.alarm,
-                          Icons.ac_unit,
-                          Icons.accessibility,
-                          Icons.account_balance,
-                          Icons.perm_identity,
-                          Icons.feed,
-                          Icons.alarm,
-                          Icons.ac_unit,
-                          Icons.accessibility,
-                          Icons.account_balance,
-                          Icons.perm_identity,
-                          Icons.perm_identity,        
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                onCancelled: () {
-                  print("Cancelled triggered");
-                },
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                crossAxisCount: 1,
-                onItemFound: (Post? post, int index) {
-                  return Text(post!.title);
-                },
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Most selected Issues',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
-          ),
-          
-        ],
+            MultiSelectChipGroup(
+              items: [
+                fever,
+                gas,
+                motion,
+                blocked,
+                sneeze,
+                acne,
+                rash,
+                period,
+                spots,
+                pregnancy,
+                darkcircle,
+                vomit,
+                headache,
+                constipation,
+                runny,
+                abdominal,
+                hairfall,
+                cough
+              ],
+              onSelectionChanged: (values) {
+                print(values);
+              },
+              horizontalChipSpacing: 10,
+              selectedColor: Colors.green,
+              disabledColor: Colors.white,
+              leftCommonIcon: Icons.perm_identity,
+              leftIcons: [
+                Icons.alarm,
+                Icons.ac_unit,
+                Icons.accessibility,
+                Icons.account_balance,
+                Icons.perm_identity,
+                Icons.perm_identity,
+                Icons.alarm,
+                Icons.ac_unit,
+                Icons.accessibility,
+                Icons.account_balance,
+                Icons.perm_identity,
+                Icons.feed,
+                Icons.alarm,
+                Icons.ac_unit,
+                Icons.accessibility,
+                Icons.account_balance,
+                Icons.perm_identity,
+                Icons.perm_identity,
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                women,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+            ),
+            MultiSelectChipGroup(
+              items: [
+                period,
+                pregnancy,
+                discharge,
+                excessbleed,
+                bleed,
+                pregplan,
+                thyroid,
+                others
+              ],
+              onSelectionChanged: (values) {
+                print(values);
+              },
+              horizontalChipSpacing: 10,
+              selectedColor: Colors.green,
+              disabledColor: Colors.white,
+              leftCommonIcon: Icons.perm_identity,
+              leftIcons: [
+                Icons.alarm,
+                Icons.ac_unit,
+                Icons.accessibility,
+                Icons.account_balance,
+                Icons.perm_identity,
+                Icons.perm_identity,
+                Icons.alarm,
+                Icons.ac_unit,
+              ],
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {}, 
-        label: Text('Choose Doctor')
-        ),
+          onPressed: () {
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil('/doc', (route) => true);
+          },
+          label: Text('Choose Doctor')),
     );
   }
 }
