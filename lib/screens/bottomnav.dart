@@ -72,7 +72,10 @@ class _BottomNavState extends State<BottomNav> {
                       color: buttonColor,
                     ),
                     title: Text(drawertitle2),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/product', (route) => true);
+                    },
                   ),
                 ),
                 Card(
@@ -85,8 +88,7 @@ class _BottomNavState extends State<BottomNav> {
                     ),
                     title: Text(drawertitle3),
                     onTap: () {
-                      Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/product', (route) => true);
+                     
                     },
                   ),
                 ),
@@ -225,15 +227,14 @@ class _BottomNavState extends State<BottomNav> {
         ),
         appBar: AppBar(
           title: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Text(
-              name,
-            ),
-            Text(location),
-          ]),
-
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                ),
+                Text(location),
+              ]),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
