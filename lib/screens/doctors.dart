@@ -41,7 +41,7 @@ class _DoctorsState extends State<Doctors> {
                       child: Card(
                         elevation: 10,
                         child: Container(
-                            color: PrimaryColor,
+                            color: buttonColor,
                             height: 30,
                             width: 90,
                             child: Center(
@@ -105,7 +105,11 @@ class _DoctorsState extends State<Doctors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(backgroundColor: AppColor),
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: gradientdecoration,
+          ),
+          ),
         body: Container(
           padding: EdgeInsets.all(16.0),
           child: SingleChildScrollView(
