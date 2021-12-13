@@ -7,9 +7,9 @@ const TertiaryColor = const Color(0xFFFFFFFF);
 
 // const TertiaryColor = const Color(0xFF795548);
 // const PrimaryColorLight = const Color(0xFFD7CCC8);
- const backColor = const Color(0xFFEEEEEE);
+const backColor = const Color(0xFFEEEEEE);
 // const PrimaryColor = const Color(0xFFFFFFFF);
- const buttonColor = const Color(0xFF8BC34A);
+const buttonColor = const Color(0xFF8BC34A);
 
 // const AppColor = const Color(0xFF01579B);
 const AppColor = const Color(0x73000000);
@@ -42,13 +42,11 @@ const decoration = BoxDecoration(
 );
 
 const gradientdecoration = BoxDecoration(
-  
     gradient: LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
   colors: [SecondaryColor, PrimaryColor],
-)
-);
+));
 
 const bold = TextStyle(
     fontSize: 20,
@@ -72,6 +70,8 @@ const bottom = EdgeInsets.only(bottom: 10);
 const lefttop = EdgeInsets.only(left: 15, top: 15);
 const drawertitle = EdgeInsets.only(top: 10, bottom: 10, left: 10);
 
+var appname = 'ECO JIVAN';
+var slogan = 'Eat Healthy - Live Healthy';
 var login = 'Login';
 var add = 'Address';
 var add1 = 'House No* ';
@@ -103,8 +103,6 @@ var selectheight = 'Select Height';
 var height = 'Height';
 var weight = 'weight';
 var age = 'Age';
-var existinguser = 'Already have account? Login';
-var aboutus = 'About us';
 var username = 'User name';
 var useremail = 'user@gmail.com';
 var email = 'Email';
@@ -120,8 +118,6 @@ var price = '₹ 999';
 var exp = '7 years exp';
 var designation = 'Physician - MBBS/MD(Gen Med)';
 var name = 'Name';
-var acne = 'Acne';
-var runny = 'Runny';
 var create = 'Create your Account';
 var edit = 'Edit profile';
 var bottom1 = 'Explore';
@@ -137,7 +133,7 @@ var cal = '730 cal';
 var quantity = 'Quantity';
 var foodname = 'Dish Name';
 var nutrition = 'Nutritional Chart';
-var recipe = 'Recipes';
+var recipe = 'Healthy Recipes';
 var proteins = 'Proteins';
 var fats = 'Fats';
 var carbs = 'Carbs';
@@ -148,3 +144,60 @@ var steps = 'Preparation Steps';
 var cookingsteps = 'Preparation Steps in detail';
 var duration = '10 Mins';
 var enterphone = 'Enter phone number to continue';
+var workout = 'Workout Plans';
+var diet = 'Diet Plan';
+var consult1 = 'Dietician';
+var consult2 = 'Physiotherapists';
+var consult3 = 'Psychiastrist';
+var drawertitle1 = 'Consult Now';
+var drawertitle2 = 'Order Products';
+var drawertitle3 = 'Buy Subscriptions';
+var drawertitle4 = 'About us';
+var drawertitle5 = 'Privacy Policy';
+var drawertitle6 = 'Terms and Conditions';
+var drawertitle7 = 'Our Sitemap';
+var drawertitle8 = 'Weekly Reports';
+var drawertitle9 = 'Diet Plan';
+var drawertitle10 = 'Workout Plan';
+var drawertitle11 = 'Reminders';
+var drawertitle12 = 'Settings';
+var week = 'Week XYZ';
+var weekfrom = '06 December - 12 December 2021';
+var consultancy = 'Online Consultations';
+var fitness = 'Fitness Goals';
+
+//most selected issues
+var fever = 'Fever';
+var gas = 'Gas';
+var motion = 'Loose motion/Diarrhea';
+var blocked = 'Blocked Nose';
+var sneeze = 'Sneezing';
+var acne = 'Acne';
+var rash = 'Rashes';
+var period = 'Period related Issues';
+var spots = 'Spots on skin';
+var pregnancy = 'Pregnancy related Issues';
+var darkcircle = 'Dark Circles';
+var vomit = 'Vomiting';
+var headache = 'Headache';
+var constipation = 'Constipation';
+var runny = 'Runny Nose';
+var abdominal = 'Abdominal Pain';
+var hairfall = 'Hairfall';
+var cough = 'Cough';
+var obesity = 'Obesity';
+var dryskin = 'Dry Skin';
+var heartburn = 'heartburn';
+var throat = 'Throat Pain';
+var itching = 'Itching';
+var others = 'Others';
+
+//womens health
+var women = "Women's Health";
+var discharge = 'White Discharge';
+var excessbleed = 'Excessive bleeding';
+var bleed = 'Bleeding after sex';
+var pregplan = 'Pregnancy Planning';
+var thyroid = 'Thyroid Problems';
+
+
