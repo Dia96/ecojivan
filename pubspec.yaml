@@ -46,6 +46,7 @@ dependencies:
   flappy_search_bar_ns: ^2.0.2
   flutter_switch: ^0.3.2
   list_tile_switch: ^1.0.0
+  percent_indicator: "^2.1.7+2"
 
   
 
