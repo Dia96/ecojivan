@@ -176,6 +176,16 @@ var usecardname = 'Use name on account';
 var expiry = 'Expiry date';
 var namecard = 'Name on Card';
 var numbercard = 'Card number';
+var manage = 'Manage Cards';
+var addcard = 'Add a Credit or Debit Card';
+var entercard = 'Enter your credit/debit card information';
+var month = 'Month';
+var year = 'Year';
+var addyourcard = 'Add your Card';
+var link = 'Link  Your UPI / PhonePe / GPay';
+var managerefund = 'Manage your Bank Account for Refund';
+var selectpay = 'Select Payment Method';
+
 
 //most selected issues
 var fever = 'Fever';
