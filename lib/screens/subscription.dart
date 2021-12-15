@@ -11,9 +11,8 @@ class Subscribe extends StatefulWidget {
 class _SubscribeState extends State<Subscribe> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: decoration,
-      
+    return Center(
+      child: Text(nothing),
     );
   }
 }
