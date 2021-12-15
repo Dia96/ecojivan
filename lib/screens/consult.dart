@@ -247,102 +247,105 @@ class _ConsultState extends State<Consult> {
           ),
           //backgroundColor: Colors.transparent,
         ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'Most selected Issues',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+      body: Padding(
+        padding: paddingall,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Most selected Issues',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            MultiSelectChipGroup(
-              items: [
-                fever,
-                gas,
-                motion,
-                blocked,
-                sneeze,
-                acne,
-                rash,
-                period,
-                spots,
-                pregnancy,
-                darkcircle,
-                vomit,
-                headache,
-                constipation,
-                runny,
-                abdominal,
-                hairfall,
-                cough
-              ],
-              onSelectionChanged: (values) {
-                print(values);
-              },
-              horizontalChipSpacing: 10,
-              selectedColor: Colors.green,
-              disabledColor: Colors.white,
-              leftCommonIcon: Icons.perm_identity,
-              leftIcons: [
-                Icons.alarm,
-                Icons.ac_unit,
-                Icons.accessibility,
-                Icons.account_balance,
-                Icons.perm_identity,
-                Icons.perm_identity,
-                Icons.alarm,
-                Icons.ac_unit,
-                Icons.accessibility,
-                Icons.account_balance,
-                Icons.perm_identity,
-                Icons.feed,
-                Icons.alarm,
-                Icons.ac_unit,
-                Icons.accessibility,
-                Icons.account_balance,
-                Icons.perm_identity,
-                Icons.perm_identity,
-              ],
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                women,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              MultiSelectChipGroup(
+                items: [
+                  fever,
+                  gas,
+                  motion,
+                  blocked,
+                  sneeze,
+                  acne,
+                  rash,
+                  period,
+                  spots,
+                  pregnancy,
+                  darkcircle,
+                  vomit,
+                  headache,
+                  constipation,
+                  runny,
+                  abdominal,
+                  hairfall,
+                  cough
+                ],
+                onSelectionChanged: (values) {
+                  print(values);
+                },
+                horizontalChipSpacing: 10,
+                selectedColor: Colors.green,
+                disabledColor: Colors.white,
+                leftCommonIcon: Icons.perm_identity,
+                leftIcons: [
+                  Icons.alarm,
+                  Icons.ac_unit,
+                  Icons.accessibility,
+                  Icons.account_balance,
+                  Icons.perm_identity,
+                  Icons.perm_identity,
+                  Icons.alarm,
+                  Icons.ac_unit,
+                  Icons.accessibility,
+                  Icons.account_balance,
+                  Icons.perm_identity,
+                  Icons.feed,
+                  Icons.alarm,
+                  Icons.ac_unit,
+                  Icons.accessibility,
+                  Icons.account_balance,
+                  Icons.perm_identity,
+                  Icons.perm_identity,
+                ],
               ),
-            ),
-            MultiSelectChipGroup(
-              items: [
-                period,
-                pregnancy,
-                discharge,
-                excessbleed,
-                bleed,
-                pregplan,
-                thyroid,
-                others
-              ],
-              onSelectionChanged: (values) {
-                print(values);
-              },
-              horizontalChipSpacing: 10,
-              selectedColor: Colors.green,
-              disabledColor: Colors.white,
-              leftCommonIcon: Icons.perm_identity,
-              leftIcons: [
-                Icons.alarm,
-                Icons.ac_unit,
-                Icons.accessibility,
-                Icons.account_balance,
-                Icons.perm_identity,
-                Icons.perm_identity,
-                Icons.alarm,
-                Icons.ac_unit,
-              ],
-            ),
-          ],
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  women,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+              ),
+              MultiSelectChipGroup(
+                items: [
+                  period,
+                  pregnancy,
+                  discharge,
+                  excessbleed,
+                  bleed,
+                  pregplan,
+                  thyroid,
+                  others
+                ],
+                onSelectionChanged: (values) {
+                  print(values);
+                },
+                horizontalChipSpacing: 10,
+                selectedColor: Colors.green,
+                disabledColor: Colors.white,
+                leftCommonIcon: Icons.perm_identity,
+                leftIcons: [
+                  Icons.alarm,
+                  Icons.ac_unit,
+                  Icons.accessibility,
+                  Icons.account_balance,
+                  Icons.perm_identity,
+                  Icons.perm_identity,
+                  Icons.alarm,
+                  Icons.ac_unit,
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
