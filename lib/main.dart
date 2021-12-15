@@ -4,17 +4,14 @@ import 'package:ecojivan/screens/consult.dart';
 import 'package:ecojivan/screens/diet.dart';
 import 'package:ecojivan/screens/doctors.dart';
 import 'package:ecojivan/screens/edit.dart';
-import 'package:ecojivan/screens/login.dart';
 import 'package:ecojivan/screens/payment.dart';
 import 'package:ecojivan/screens/product.dart';
-import 'package:ecojivan/screens/registerthree.dart';
 import 'package:ecojivan/screens/registertwo.dart';
 import 'package:ecojivan/screens/registration.dart';
 import 'package:ecojivan/screens/reports.dart';
 import 'package:ecojivan/screens/settings.dart';
 import 'package:ecojivan/screens/sliverappbar.dart';
 import 'package:ecojivan/screens/splash.dart';
-import 'package:ecojivan/screens/try.dart';
 import 'package:ecojivan/screens/verification.dart';
 import 'package:ecojivan/screens/workout.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +46,6 @@ class MyApp extends StatelessWidget {
         '/product': (context) => Product(),
         '/reports': (context) => WeeklyReports(),
         '/workout': (context) => Workout(),
-        '/test': (context) => VisibilityExample(),
       },
     );
   }
