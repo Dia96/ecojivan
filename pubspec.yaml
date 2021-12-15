@@ -44,6 +44,8 @@ dependencies:
   multiselectchipgroup: ^0.1.1
   material_floating_search_bar: ^0.3.6
   flappy_search_bar_ns: ^2.0.2
+  flutter_switch: ^0.3.2
+  list_tile_switch: ^1.0.0
 
   
 
@@ -75,6 +77,12 @@ flutter:
   assets:
     - assets/images.jpeg
     - assets/logo.png
+    - assets/workout.jpeg
+    - assets/diet.jpeg
+    - assets/recipe.jpeg
+    - assets/psych.jpeg
+    - assets/therapist.jpeg
+    - assets/diab.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
