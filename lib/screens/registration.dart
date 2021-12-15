@@ -22,11 +22,11 @@ class _RegistrationState extends State<Registration> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 50),
+                  padding: top50,
                   child: Image.asset('assets/logo.png'),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 30),
+                  padding: regpadding,
                   child: Text(create, style: bold),
                 ),
                 Align(
@@ -34,39 +34,14 @@ class _RegistrationState extends State<Registration> {
                     child: Text(name, style: namestyle)),
                 Padding(
                   padding: bottom,
-                  child: TextField(
-                    // decoration: InputDecoration(
-                    //   border: OutlineInputBorder(),
-                    // ),
-                  ),
+                  child: TextField(),
                 ),
-                // Align(alignment: Alignment.topLeft, child: Text(add)),
-                // Padding(
-                //   padding: paddingtb,
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //     children: [
-                //       Container(
-                //           height: 30,
-                //           width: 100,
-                //           decoration: BoxDecoration(color: TertiaryColor),
-                //           child: Text(add1)),
-                //       Container(
-                //           height: 30,
-                //           width: 100,
-                //           decoration: BoxDecoration(color: TertiaryColor),
-                //           child: Text(add2)),
-                //       Container(
-                //           height: 30,
-                //           width: 100,
-                //           decoration: BoxDecoration(color: TertiaryColor),
-                //           child: Text(add3))
-                //     ],
-                //   ),
-                // ),
-
-                
-                Align(alignment: Alignment.topLeft, child: Text(gender)),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      gender,
+                      style: namestyle,
+                    )),
                 Padding(
                   padding: paddingtb,
                   child: Row(
@@ -75,48 +50,55 @@ class _RegistrationState extends State<Registration> {
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.female),
-                          label: Text(female)),
+                          label: Text(
+                            female,
+                            style: genderstyle,
+                          )),
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.male),
-                          label: Text(male)),
+                          label: Text(
+                            male,
+                            style: genderstyle,
+                          )),
                       ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.transgender),
-                          label: Text(trans)),
+                          label: Text(
+                            trans,
+                            style: genderstyle,
+                          )),
                     ],
                   ),
                 ),
-
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 10, bottom: 5, right: 10),
-                    child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          looking,
-                          style: namestyle,
-                        )),
-                  ),
-
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
+                  child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        looking,
+                        style: namestyle,
+                      )),
+                ),
                 MultiSelectChipGroup(
-                    items: [health, diab, obese, hyper, pcos, stress],
-                    onSelectionChanged: (values) {
-                      print(values);
-                    },
-                    horizontalChipSpacing: 10,
-                    selectedColor: Colors.green,
-                    disabledColor: Colors.white,
-                    leftCommonIcon: Icons.perm_identity,
-                    leftIcons: [
-                      Icons.alarm,
-                      Icons.ac_unit,
-                      Icons.accessibility,
-                      Icons.account_balance,
-                      Icons.perm_identity,
-                      Icons.perm_identity,
-                    ],
-                  ),  
+                  labelFontSize: 16,
+                  items: [health, diab, obese, hyper, pcos, stress],
+                  onSelectionChanged: (values) {
+                    print(values);
+                  },
+                  horizontalChipSpacing: 10,
+                  selectedColor: Colors.green,
+                  disabledColor: Colors.white,
+                  leftCommonIcon: Icons.perm_identity,
+                  leftIcons: [
+                    Icons.alarm,
+                    Icons.ac_unit,
+                    Icons.accessibility,
+                    Icons.account_balance,
+                    Icons.perm_identity,
+                    Icons.perm_identity,
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 5, right: 10),
                   child: Align(
@@ -124,7 +106,7 @@ class _RegistrationState extends State<Registration> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamedAndRemoveUntil('/rthree', (route) => true);
+                            .pushNamedAndRemoveUntil('/rtwo', (route) => true);
                       },
                       label: Text(next),
                       icon: Icon(Icons.arrow_right),
