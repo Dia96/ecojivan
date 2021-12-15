@@ -9,6 +9,53 @@ class Doctors extends StatefulWidget {
 }
 
 class _DoctorsState extends State<Doctors> {
+  void _show(BuildContext ctx) {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15.0), topRight: Radius.circular(15.0)),
+        ),
+        elevation: 10,
+        backgroundColor: Colors.white,
+        context: ctx,
+        builder: (ctx) => Container(
+              height: 200,
+              child: Padding(
+                padding: paddingall,
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        selectpay,
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                .pushNamedAndRemoveUntil('/doc', (route) => true);
+                      },
+                      child: ListTile(
+                        leading: Icon(Icons.credit_card),
+                        title: Text('Credit Card'),
+                        subtitle: Text('This plan will auto-renew post expiry'),
+                        trailing: Text(price),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.credit_card),
+                      title: Text('Debit Card'),
+                     
+                      trailing: Text(price),
+                    ),
+                  ],
+                ),
+              ),
+            ));
+  }
+
   Card buildCard() {
     var cardImage = AssetImage('assets/logo.png');
     return Card(
@@ -70,9 +117,7 @@ class _DoctorsState extends State<Doctors> {
                       ),
                       Container(
                         alignment: Alignment.centerLeft,
-                        child: Text(docname,
-                            style: bold
-                                ),
+                        child: Text(docname, style: bold),
                       ),
                       Container(
                         alignment: Alignment.centerLeft,
@@ -82,10 +127,8 @@ class _DoctorsState extends State<Doctors> {
                         alignment: Alignment.centerLeft,
                         child: Text(price),
                       ),
-                      ElevatedButton(onPressed: () {
-                         Navigator.of(context)
-                            .pushNamedAndRemoveUntil('/payments', (route) => true);
-                      }, child: Text(consult))
+                      ElevatedButton(
+                          onPressed: () => _show(context), child: Text(consult))
                     ],
                   ),
                 ),
@@ -112,7 +155,7 @@ class _DoctorsState extends State<Doctors> {
           flexibleSpace: Container(
             decoration: gradientdecoration,
           ),
-          ),
+        ),
         body: Container(
           padding: EdgeInsets.all(16.0),
           child: SingleChildScrollView(
