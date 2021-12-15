@@ -82,7 +82,10 @@ class _DoctorsState extends State<Doctors> {
                         alignment: Alignment.centerLeft,
                         child: Text(price),
                       ),
-                      ElevatedButton(onPressed: () {}, child: Text(consult))
+                      ElevatedButton(onPressed: () {
+                         Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/payments', (route) => true);
+                      }, child: Text(consult))
                     ],
                   ),
                 ),

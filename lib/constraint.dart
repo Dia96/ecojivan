@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-const PrimaryColor = const Color(0xFF795548);
+const PrimaryColor = const Color(0xFF263238);
 const PrimaryColorLight = const Color(0xFFD7CCC8);
-const SecondaryColor = const Color(0xFF9E9E9E);
+const SecondaryColor = const Color(0xFF78909C);
 const TertiaryColor = const Color(0xFFFFFFFF);
 
-// const TertiaryColor = const Color(0xFF795548);
-// const PrimaryColorLight = const Color(0xFFD7CCC8);
 const backColor = const Color(0xFFEEEEEE);
 // const PrimaryColor = const Color(0xFFFFFFFF);
 const buttonColor = const Color(0xFF8BC34A);
 
-// const AppColor = const Color(0xFF01579B);
 const AppColor = const Color(0x73000000);
 
 const backgroundgradient = LinearGradient(
@@ -32,13 +30,10 @@ const countryinput = BoxDecoration(
 
 const backgrounddecoration = BoxDecoration(gradient: backgroundgradient);
 
+
+
 const decoration = BoxDecoration(
   color: const Color(0xFFFFFFFF),
-  //   gradient: LinearGradient(
-  // begin: Alignment.centerLeft,
-  // end: Alignment.centerRight,
-  // colors: [SecondaryColor, PrimaryColor],
-//)
 );
 
 const gradientdecoration = BoxDecoration(
@@ -49,9 +44,14 @@ const gradientdecoration = BoxDecoration(
 ));
 
 const bold = TextStyle(
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: FontWeight.bold,
     color: AppColor,
+    decoration: TextDecoration.none);
+    const whitebold = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: TertiaryColor,
     decoration: TextDecoration.none);
 const phoneverify = TextStyle(
     fontSize: 15,
@@ -60,15 +60,19 @@ const phoneverify = TextStyle(
     decoration: TextDecoration.none);
 const otpverify = TextStyle(
     fontSize: 15, color: TertiaryColor, decoration: TextDecoration.none);
-const namestyle = TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
+const namestyle = TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
+const genderstyle = TextStyle(fontSize: 18);
 const bottomstyle = TextStyle(color: TertiaryColor);
+const opacitystyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: TertiaryColor);
 
+const top50 = EdgeInsets.only(top: 50);
 const paddingall = EdgeInsets.all(15.0);
 const paddingtb = EdgeInsets.only(top: 10, bottom: 15);
 const top = EdgeInsets.only(top: 10);
 const bottom = EdgeInsets.only(bottom: 10);
 const lefttop = EdgeInsets.only(left: 15, top: 15);
 const drawertitle = EdgeInsets.only(top: 10, bottom: 10, left: 10);
+const regpadding = EdgeInsets.only(top: 10, bottom: 30);
 
 var appname = 'ECO JIVAN';
 var slogan = 'Eat Healthy - Live Healthy';
@@ -120,6 +124,7 @@ var designation = 'Physician - MBBS/MD(Gen Med)';
 var name = 'Name';
 var create = 'Create your Account';
 var edit = 'Edit profile';
+var nothing = 'Nothing to Show';
 var bottom1 = 'Explore';
 var bottom2 = 'Products';
 var bottom3 = 'Consult';
@@ -146,6 +151,7 @@ var duration = '10 Mins';
 var enterphone = 'Enter phone number to continue';
 var workout = 'Workout Plans';
 var diet = 'Diet Plan';
+var history = 'History';
 var consult1 = 'Dietician';
 var consult2 = 'Physiotherapists';
 var consult3 = 'Psychiastrist';
@@ -155,16 +161,21 @@ var drawertitle3 = 'Buy Subscriptions';
 var drawertitle4 = 'About us';
 var drawertitle5 = 'Privacy Policy';
 var drawertitle6 = 'Terms and Conditions';
-var drawertitle7 = 'Our Sitemap';
+
 var drawertitle8 = 'Weekly Reports';
 var drawertitle9 = 'Diet Plan';
 var drawertitle10 = 'Workout Plan';
 var drawertitle11 = 'Reminders';
 var drawertitle12 = 'Settings';
+var subscribe = 'Subscriptions';
 var week = 'Week XYZ';
 var weekfrom = '06 December - 12 December 2021';
 var consultancy = 'Online Consultations';
 var fitness = 'Fitness Goals';
+var usecardname = 'Use name on account';
+var expiry = 'Expiry date';
+var namecard = 'Name on Card';
+var numbercard = 'Card number';
 
 //most selected issues
 var fever = 'Fever';

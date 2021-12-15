@@ -5,14 +5,18 @@ import 'package:ecojivan/screens/diet.dart';
 import 'package:ecojivan/screens/doctors.dart';
 import 'package:ecojivan/screens/edit.dart';
 import 'package:ecojivan/screens/login.dart';
+import 'package:ecojivan/screens/payment.dart';
 import 'package:ecojivan/screens/product.dart';
 import 'package:ecojivan/screens/registerthree.dart';
 import 'package:ecojivan/screens/registertwo.dart';
 import 'package:ecojivan/screens/registration.dart';
 import 'package:ecojivan/screens/reports.dart';
+import 'package:ecojivan/screens/settings.dart';
 import 'package:ecojivan/screens/sliverappbar.dart';
 import 'package:ecojivan/screens/splash.dart';
+import 'package:ecojivan/screens/try.dart';
 import 'package:ecojivan/screens/verification.dart';
+import 'package:ecojivan/screens/workout.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,9 +37,9 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/verification': (context) => Verification(),
         '/register': (context) => Registration(),
-        //'/rtwo': (context) => RegistrationTwo(),
-        '/rthree': (context) => RegistrationThree(),
-        //'/login': (context) => Login(),
+        '/rtwo': (context) => RegistrationTwo(),
+        '/payments': (context) => Payment(),
+        '/settings': (context) => Settings(),
         '/home': (context) => BottomNav(),
         '/doc': (context) => Doctors(),
         '/edit': (context) => EditProfile(),
@@ -44,6 +48,8 @@ class MyApp extends StatelessWidget {
         '/consult': (context) => Consult(),
         '/product': (context) => Product(),
         '/reports': (context) => WeeklyReports(),
+        '/workout': (context) => Workout(),
+        '/test': (context) => VisibilityExample(),
       },
     );
   }
