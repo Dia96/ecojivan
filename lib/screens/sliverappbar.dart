@@ -18,16 +18,19 @@ class _MainCollapsingToolbarState extends State<MainCollapsingToolbar> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
+               
                 expandedHeight: 200.0,
                 floating: false,
                 pinned: true,
-                flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: true,
-                  
-                    background: Image.asset('assets/logo.png',
-                    fit: BoxFit.cover,
-                    ),
-                    ),
+                flexibleSpace: DecoratedBox(
+                  decoration: gradientdecoration,
+                  child: FlexibleSpaceBar(                
+                      centerTitle: true,                
+                      background: Image.asset('assets/logo.png',
+                      fit: BoxFit.cover,
+                      ),
+                      ),
+                ),
               ),
               SliverPersistentHeader(
                 delegate: _SliverAppBarDelegate(
