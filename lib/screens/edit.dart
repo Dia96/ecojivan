@@ -94,81 +94,176 @@ class _EditProfileState extends State<EditProfile> {
                   Icons.perm_identity,
                 ],
               ),
-              Row(children: [
-                Expanded(
-                  child: Row(children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        padding: paddingtb,
-                        child: DropdownSearch<String>(
-                            mode: Mode.MENU,
-                            items: [
-                              "110cm",
-                              "120cm",
-                              "130cm",
-                              '140cm',
-                              "150cm",
-                              "160cm",
-                              "170cm",
-                              '180cm'
-                            ],
-                            label: height,
-                            onChanged: print,
-                            selectedItem: selectheight),
+              Row(
+                children: [
+                  Flexible(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            '$height (in cm)',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            '$weigh (in kg)',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            age,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Blood Group',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('A+'),
                       ),
                     ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Padding(
-                        padding: paddingtb,
-                        child: DropdownSearch<String>(
-                            mode: Mode.MENU,
-                            items: [
-                              "30kg",
-                              "31Kg",
-                              "32Kg",
-                              '33Kg',
-                              "34Kg",
-                              "35Kg",
-                              "36Kg",
-                              '37Kg'
-                                  "38kg",
-                              "39Kg",
-                              "40Kg",
-                              '41Kg',
-                              "42Kg",
-                              "43Kg",
-                              "44Kg",
-                              '45Kg'
-                            ],
-                            label: weight,
-                            selectedItem: selectweight),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('A-'),
                       ),
                     ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Padding(
-                        padding: paddingtb,
-                        child: DropdownSearch<String>(
-                            mode: Mode.MENU,
-                            items: [
-                              "110cm",
-                              "120cm",
-                              "130cm",
-                              '140cm',
-                              "150cm",
-                              "160cm",
-                              "170cm",
-                              '180cm'
-                            ],
-                            label: height,
-                            onChanged: print,
-                            selectedItem: selectheight),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('B+'),
                       ),
                     ),
-                  ]),
-                )
-              ]),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('B-'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('AB+'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('A'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('AB-'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('O+'),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[100],
+                        child: Text('O-'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+                MultiSelectChipGroup(
+                labelFontSize: 16,
+                items: [health, diab, obese, hyper, pcos, stress],
+                onSelectionChanged: (values) {
+                  print(values);
+                },
+                horizontalChipSpacing: 10,
+                selectedColor: Colors.green,
+                disabledColor: Colors.white,
+                leftCommonIcon: Icons.perm_identity,
+                leftIcons: [
+                  Icons.alarm,
+                  Icons.ac_unit,
+                  Icons.accessibility,
+                  Icons.account_balance,
+                  Icons.perm_identity,
+                  Icons.perm_identity,
+                ],
+              ),
+
+              ElevatedButton(
+                onPressed: () {},
+                 child: Text('Update'))
             ],
           ),
         ),
