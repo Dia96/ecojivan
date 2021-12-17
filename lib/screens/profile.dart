@@ -185,7 +185,10 @@ class Profile extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.settings, color: buttonColor),
                     title: Text(settings),
-                    onTap: () {},
+                    onTap: () {
+                        Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/settings', (route) => true);
+                    },
                   ),
                 ),
               ],
