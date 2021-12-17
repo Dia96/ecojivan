@@ -297,49 +297,61 @@ class Home extends StatelessWidget {
                           ))),
                     ),
     
-                     ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0), //or 15.0
-                      child: Container(
-                          height: 100.0,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/therapist.jpeg'),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.darken),
+                     GestureDetector(
+                       onTap: () {
+                         Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/physio', (route) => true);
+                       },
+                       child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Container(
+                            height: 100.0,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/therapist.jpeg'),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken),
+                              ),
                             ),
-                          ),
-                          child: Center(
-                              child: Text(
-                            consult2,
-                            style: opacitystyle,
-                            textAlign: TextAlign.center,
-                          ))),
-                    ),
-    
-                     ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0), //or 15.0
-                      child: Container(
-                          height: 100.0,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/psych.jpeg'),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.darken),
+                            child: Center(
+                                child: Text(
+                              consult2,
+                              style: opacitystyle,
+                              textAlign: TextAlign.center,
+                            ))),
+                                         ),
+                     ),
+
+                     GestureDetector(
+                       onTap: () {
+                         Navigator.of(context)
+                            .pushNamedAndRemoveUntil('/psych', (route) => true);
+                       },
+                       child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0), //or 15.0
+                        child: Container(
+                            height: 100.0,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/psych.jpeg'),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken),
+                              ),
                             ),
-                          ),
-                          child: Center(
-                              child: Text(
-                            consult3,
-                            style: opacitystyle,
-                            textAlign: TextAlign.center,
-                          ))),
-                    ),
+                            child: Center(
+                                child: Text(
+                              consult3,
+                              style: opacitystyle,
+                              textAlign: TextAlign.center,
+                            ))),
+                                         ),
+                     ),
                                    
                   ],
                 ),
@@ -384,26 +396,32 @@ class Home extends StatelessWidget {
                       ),
                     ),
     
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0), //or 15.0
-                      child: Container(
-                          height: 100.0,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/recipe.jpeg'),
-                              fit: BoxFit.cover,
-                              colorFilter: ColorFilter.mode(
-                                  Colors.black.withOpacity(0.5),
-                                  BlendMode.darken),
+                    GestureDetector(
+                      onTap: () {
+                         Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/cuisine', (route) => true);
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0), //or 15.0
+                        child: Container(
+                            height: 100.0,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/recipe.jpeg'),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.5),
+                                    BlendMode.darken),
+                              ),
                             ),
-                          ),
-                          child: Center(
-                              child: Text(
-                            recipe,
-                            style: opacitystyle,
-                            textAlign: TextAlign.center,
-                          ))),
+                            child: Center(
+                                child: Text(
+                              recipe,
+                              style: opacitystyle,
+                              textAlign: TextAlign.center,
+                            ))),
+                      ),
                     ),
     
                     GestureDetector(
