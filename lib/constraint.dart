@@ -28,6 +28,17 @@ const countryinput = BoxDecoration(
   ),
 );
 
+// const recipegrid = BoxDecoration(
+//   color: TertiaryColor,
+//   borderRadius: 
+//   // borderRadius: BorderRadius.only(
+//   //   topLeft: const Radius.circular(10.0),
+//   //   topRight: const Radius.circular(10.0),
+//   //   bottomLeft: const Radius.circular(10.0),
+//   //   bottomRight: const Radius.circular(10.0),
+//   // ),
+// );
+
 const backgrounddecoration = BoxDecoration(gradient: backgroundgradient);
 
 
@@ -62,6 +73,7 @@ const otpverify = TextStyle(
     fontSize: 15, color: TertiaryColor, decoration: TextDecoration.none);
 const namestyle = TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
 const genderstyle = TextStyle(fontSize: 18);
+const cuisinestyle = TextStyle(fontSize: 15);
 const bottomstyle = TextStyle(color: TertiaryColor);
 const opacitystyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: TertiaryColor);
 
@@ -105,7 +117,8 @@ var reg = 'Register';
 var selectweight = 'Select Weight';
 var selectheight = 'Select Height';
 var height = 'Height';
-var weight = 'weight';
+var weight = 'Weight';
+var weigh = 'Weight';
 var age = 'Age';
 var username = 'User name';
 var useremail = 'user@gmail.com';
@@ -135,6 +148,7 @@ var diet3 = 'Lunch';
 var diet4 = 'Evening Snacks';
 var diet5 = 'Dinner';
 var cal = '730 cal';
+var product = 'Instant Biryani Mix | 100% Natural Millet Breakfast Mix';
 var quantity = 'Quantity';
 var foodname = 'Dish Name';
 var nutrition = 'Nutritional Chart';
@@ -150,6 +164,7 @@ var cookingsteps = 'Preparation Steps in detail';
 var duration = '10 Mins';
 var enterphone = 'Enter phone number to continue';
 var workout = 'Workout Plans';
+var exname = 'Exercise Name';
 var diet = 'Diet Plan';
 var history = 'History';
 var consult1 = 'Dietician';
@@ -185,6 +200,20 @@ var addyourcard = 'Add your Card';
 var link = 'Link  Your UPI / PhonePe / GPay';
 var managerefund = 'Manage your Bank Account for Refund';
 var selectpay = 'Select Payment Method';
+var cuisine = 'Cuisines';
+var meal = 'Meals';
+var squat = 'Squats';
+var lunges = 'Lunges';
+var course = 'Course of Meals';
+var cuisine1 = 'Indian';
+var cuisine2 = 'Chinese';
+var cuisine3 = 'Asian';
+var cuisine4 = 'Thai';
+var cuisine5 = 'Italian';
+var cuisine6 = 'Mexican';
+var cuisine7 = 'Continental';
+var cuisine8 = 'Middle Eastern';
+
 
 
 //most selected issues
@@ -220,5 +249,9 @@ var excessbleed = 'Excessive bleeding';
 var bleed = 'Bleeding after sex';
 var pregplan = 'Pregnancy Planning';
 var thyroid = 'Thyroid Problems';
+
+
+
+var dummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 
