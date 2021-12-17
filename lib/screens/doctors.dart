@@ -35,7 +35,7 @@ class _DoctorsState extends State<Doctors> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context)
-                .pushNamedAndRemoveUntil('/doc', (route) => true);
+                            .pushNamedAndRemoveUntil('/pay', (route) => true);
                       },
                       child: ListTile(
                         leading: Icon(Icons.credit_card),
@@ -47,7 +47,6 @@ class _DoctorsState extends State<Doctors> {
                     ListTile(
                       leading: Icon(Icons.credit_card),
                       title: Text('Debit Card'),
-                     
                       trailing: Text(price),
                     ),
                   ],
