@@ -20,13 +20,16 @@ class _WorkoutDescriptionState extends State<WorkoutDescription> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.asset('assets/workoutone.gif'),
-            Text(exname, style: namestyle,),
-            Text(dummy),
-          ],
+        child: Padding(
+          padding: paddingall,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.asset('assets/workoutone.gif'),
+              Text(exname, style: namestyle,),
+              Text(dummy),
+            ],
+          ),
         ),
       ),
     );
