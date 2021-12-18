@@ -109,7 +109,10 @@ class Profile extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.health_and_safety, color: buttonColor),
                     title: Text(drawertitle9),
-                    onTap: () {},
+                    onTap: () {
+                       Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/diet', (route) => true);
+                    },
                   ),
                 ),
                 Card(
@@ -118,7 +121,10 @@ class Profile extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.work_outline, color: buttonColor),
                     title: Text(drawertitle10),
-                    onTap: () {},
+                    onTap: () {
+                       Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/workout', (route) => true);
+                    },
                   ),
                 ),
                 Card(
