@@ -42,13 +42,9 @@ dependencies:
   the_country_number_widgets: ^0.9.2+2
   pin_entry_text_field: ^0.1.4
   multiselectchipgroup: ^0.1.1
-  material_floating_search_bar: ^0.3.6
-  flappy_search_bar_ns: ^2.0.2
-  flutter_switch: ^0.3.2
   list_tile_switch: ^1.0.0
   percent_indicator: "^2.1.7+2"
-  syncfusion_flutter_datepicker: ^19.3.59
-  custom_horizontal_calendar: ^0.1.3
+ 
 
   
 
