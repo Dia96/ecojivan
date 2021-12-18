@@ -1,6 +1,5 @@
 import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
 
 class Settings extends StatefulWidget {
