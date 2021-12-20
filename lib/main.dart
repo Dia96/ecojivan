@@ -24,13 +24,18 @@ import 'package:ecojivan/screens/verification.dart';
 import 'package:ecojivan/screens/workout.dart';
 import 'package:ecojivan/screens/workoutdesc.dart';
 import 'package:ecojivan/screens/workoutlist.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,7 +68,8 @@ class MyApp extends StatelessWidget {
         '/healthy': (context) => HealthyRecipe(),
         '/productdesc': (context) => ProductDescription(),
         '/physio': (context) => PhysioList(),
-        '/psych': (context) => PsychTherapy()
+        '/psych': (context) => PsychTherapy(),
+       
       },
     );
   }
