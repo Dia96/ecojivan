@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "157496121581",
+    "project_id": "trial-oolm",
+    "storage_bucket": "trial-oolm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157496121581:android:838eff8dd3d0f74a1494e4",
+        "android_client_info": {
+          "package_name": "com.example.ecojivan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157496121581-prqt7o4tu49ng1tf4f1b23fo9hv3c3uc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecojivan",
+            "certificate_hash": "87f78fa24e5fa0d484b1a0ad80a07956bd3a82b7"
+          }
+        },
+        {
+          "client_id": "157496121581-fkuclhm8q7vv0hint3jddub2sjobi45s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFqWH0vfxMytvShb7kNNWJuLYs2I-URZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157496121581-fkuclhm8q7vv0hint3jddub2sjobi45s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
