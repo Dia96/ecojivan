@@ -1,3 +1,6 @@
+//import 'dart:js_util';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
 import 'package:multiselectchipgroup/multiselectchipgroup.dart';
@@ -7,6 +10,26 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // FirebaseFirestore.instance
+    //       .collection("products")
+    //       .get()
+    //       .then((querySnapshot) {
+    //     querySnapshot.docs.forEach((result) {
+    //       print(result.data());
+    //     });
+    //   });
+
+    void _onPressed() {
+      FirebaseFirestore.instance
+          .collection("products")
+          .get()
+          .then((querySnapshot) {
+        querySnapshot.docs.forEach((result) {
+          print(result.data());
+        });
+      });
+    }
+
     final double itemHeight = 22;
     final double itemWidth = 15;
 
@@ -103,8 +126,8 @@ class Product extends StatelessWidget {
                   leading: Icon(Icons.health_and_safety, color: buttonColor),
                   title: Text(drawertitle9),
                   onTap: () {
-                     Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/diet', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/diet', (route) => true);
                   },
                 ),
               ),
@@ -115,8 +138,8 @@ class Product extends StatelessWidget {
                   leading: Icon(Icons.work_outline, color: buttonColor),
                   title: Text(drawertitle10),
                   onTap: () {
-                     Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/workout', (route) => true);
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/workout', (route) => true);
                   },
                 ),
               ),
@@ -218,11 +241,70 @@ class Product extends StatelessWidget {
                   crossAxisCount: 2,
                   childAspectRatio: (itemWidth / itemHeight),
                 ),
-                children: [               
+                children: [
+                  //                 StreamBuilder(
+                  //         stream: FirebaseFirestore.instance
+                  //             .collection('YOUR COLLECTION NAME')
+                  //             .doc() //ID OF DOCUMENT
+                  //             .snapshots(),
+                  //       builder: (context, snapshot) {
+                  //       if (!snapshot.hasData) {
+                  //         return new CircularProgressIndicator();
+                  //       }
+                  //       var document = snapshot.data;
+                  //       return new Text(document);
+                  //    }
+                  // ),
+
+                  GestureDetector(
+                    onTap: _onPressed,
+                    // () {
+                    //    Navigator.of(context)
+                    //     .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                    // },
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Stack(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(12.0),
+                                child: Container(
+                                    color: Colors.brown,
+                                    child: Image.asset(
+                                      'assets/psych.jpeg',
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: CircleAvatar(
+                                  child: Text('1%'),
+                                ),
+                              )
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
+                                style: genderstyle),
+                          ),
+                          Text(''),
+                          //Text(snapshot.data.documents[index].get("Name")),
+                          ListTile(
+                            leading: Icon(Icons.shopping_cart),
+                            trailing: Icon(Icons.favorite),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -241,7 +323,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -264,8 +346,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -284,7 +366,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -307,8 +389,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -327,7 +409,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -350,8 +432,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -370,7 +452,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -393,8 +475,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -413,7 +495,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -436,8 +518,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -456,7 +538,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -479,8 +561,8 @@ class Product extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          '/productdesc', (route) => true);
                     },
                     child: Card(
                       child: Column(
@@ -499,7 +581,7 @@ class Product extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CircleAvatar(
-                                  child: Text('-1%'),
+                                  child: Text('1%'),
                                 ),
                               )
                             ],
@@ -519,49 +601,6 @@ class Product extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  GestureDetector(
-                    onTap: () {
-                       Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('-1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),                
                 ],
               ),
             ),
