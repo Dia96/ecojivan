@@ -1,5 +1,3 @@
-//import 'dart:js_util';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecojivan/constraint.dart';
 import 'package:flutter/material.dart';
@@ -10,15 +8,6 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // FirebaseFirestore.instance
-    //       .collection("products")
-    //       .get()
-    //       .then((querySnapshot) {
-    //     querySnapshot.docs.forEach((result) {
-    //       print(result.data());
-    //     });
-    //   });
-
     void _onPressed() {
       FirebaseFirestore.instance
           .collection("products")
@@ -242,20 +231,82 @@ class Product extends StatelessWidget {
                   childAspectRatio: (itemWidth / itemHeight),
                 ),
                 children: [
-                  //                 StreamBuilder(
-                  //         stream: FirebaseFirestore.instance
-                  //             .collection('YOUR COLLECTION NAME')
-                  //             .doc() //ID OF DOCUMENT
-                  //             .snapshots(),
-                  //       builder: (context, snapshot) {
-                  //       if (!snapshot.hasData) {
-                  //         return new CircularProgressIndicator();
-                  //       }
-                  //       var document = snapshot.data;
-                  //       return new Text(document);
-                  //    }
-                  // ),
-
+                  StreamBuilder<QuerySnapshot>(
+                    stream: FirebaseFirestore.instance
+                        .collection('products')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              DocumentSnapshot doc = snapshot.data!.docs[index];
+                              return Text(doc['name']);
+                            });
+                      } else {
+                        return Text("No data");
+                      }
+                    },
+                  ),
+                  StreamBuilder<QuerySnapshot>(
+                    stream: FirebaseFirestore.instance
+                        .collection('products')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return ListView.builder(
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              DocumentSnapshot doc = snapshot.data!.docs[index];
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamedAndRemoveUntil(
+                                      '/productdesc', (route) => true);
+                                },
+                                child: Card(
+                                  child: Column(
+                                    children: [
+                                      Stack(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            child: Container(
+                                                color: Colors.brown,
+                                                child: Image.asset(
+                                                  'assets/psych.jpeg',
+                                                  fit: BoxFit.cover,
+                                                )),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: CircleAvatar(
+                                              child: Text('1%'),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
+                                        child: Text(doc['name'],
+                                            style: genderstyle),
+                                      ),
+                                      Text(price),
+                                      ListTile(
+                                        leading: Icon(Icons.shopping_cart),
+                                        trailing: Icon(Icons.favorite),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            });
+                      } else {
+                        return Text("No data");
+                      }
+                    },
+                  ),
                   GestureDetector(
                     onTap: _onPressed,
                     // () {
@@ -292,307 +343,6 @@ class Product extends StatelessWidget {
                           ),
                           Text(''),
                           //Text(snapshot.data.documents[index].get("Name")),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
-                          ListTile(
-                            leading: Icon(Icons.shopping_cart),
-                            trailing: Icon(Icons.favorite),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/productdesc', (route) => true);
-                    },
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Container(
-                                    color: Colors.brown,
-                                    child: Image.asset(
-                                      'assets/psych.jpeg',
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: CircleAvatar(
-                                  child: Text('1%'),
-                                ),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Text(
-                                'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                                style: genderstyle),
-                          ),
-                          Text(price),
                           ListTile(
                             leading: Icon(Icons.shopping_cart),
                             trailing: Icon(Icons.favorite),
