@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../constraint.dart';
@@ -34,35 +35,56 @@ class _CuisinesState extends State<Cuisines> {
               ),
               SizedBox(
                 height: 150.0,
-                child: ListView.builder(
-                  physics: ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) => GestureDetector(
-                    onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                              radius: 40,
-                              backgroundImage: AssetImage(
-                                'assets/diet.jpeg',
-                              )),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(cuisine, style: cuisinestyle)
-                        ],
-                      ),
-                    ),
-                  ),
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('cuisine')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Align(
+                        child: ListView.builder(
+                            physics: ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              DocumentSnapshot doc = snapshot.data!.docs[index];
+                              return SizedBox(
+                                height: 150.0,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushNamedAndRemoveUntil(
+                                        '/indian', (route) => true);
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        CircleAvatar(
+                                            radius: 40,
+                                            backgroundImage: AssetImage(
+                                              'assets/diet.jpeg',
+                                            )),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(doc['name'], style: cuisinestyle)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                      );
+                    } else {
+                      return Text(noproduct);
+                    }
+                  },
                 ),
               ),
+
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
@@ -70,152 +92,57 @@ class _CuisinesState extends State<Cuisines> {
                   style: namestyle,
                 ),
               ),
-              SizedBox(
+                SizedBox(
                 height: 150.0,
-                child: ListView(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),
-
-                       GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),
-                       GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),
-
-                       GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),
-
-                       GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),
-                       GestureDetector(
-                      onTap: () {
-                         Navigator.of(context)
-                          .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                  'assets/diet.jpeg',
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(cuisine1, style: cuisinestyle)
-                          ],
-                        ),
-                      ),
-                    ),              
-                  ],
-                  physics: ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('cuisine')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Align(
+                        child: ListView.builder(
+                            physics: ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              DocumentSnapshot doc = snapshot.data!.docs[index];
+                              return SizedBox(
+                                height: 150.0,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushNamedAndRemoveUntil(
+                                        '/indian', (route) => true);
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        CircleAvatar(
+                                            radius: 40,
+                                            backgroundImage: AssetImage(
+                                              'assets/diet.jpeg',
+                                            )),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(doc['name'], style: cuisinestyle)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                      );
+                    } else {
+                      return Text(noproduct);
+                    }
+                  },
                 ),
               ),
-
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
@@ -230,11 +157,12 @@ class _CuisinesState extends State<Cuisines> {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) => GestureDetector(
+                  itemBuilder: (BuildContext context, int index) =>
+                      GestureDetector(
                     onTap: () {
-                         Navigator.of(context)
+                      Navigator.of(context)
                           .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -268,11 +196,12 @@ class _CuisinesState extends State<Cuisines> {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: 15,
-                  itemBuilder: (BuildContext context, int index) => GestureDetector(
+                  itemBuilder: (BuildContext context, int index) =>
+                      GestureDetector(
                     onTap: () {
-                         Navigator.of(context)
+                      Navigator.of(context)
                           .pushNamedAndRemoveUntil('/indian', (route) => true);
-                      },
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
