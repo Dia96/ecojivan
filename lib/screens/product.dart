@@ -8,18 +8,8 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _onPressed() {
-      FirebaseFirestore.instance
-          .collection("products")
-          .get()
-          .then((querySnapshot) {
-        querySnapshot.docs.forEach((result) {
-          print(result.data());
-        });
-      });
-    }
-
-    final double itemHeight = 22;
+    
+    final double itemHeight = 25;
     final double itemWidth = 15;
 
     return Scaffold(
@@ -224,138 +214,64 @@ class Product extends StatelessWidget {
         padding: paddingall,
         // child: Column(
         //   children: [
-            // Flexible(
-            //   child: GridView(
-            //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            //       crossAxisCount: 2,
-            //       childAspectRatio: (itemWidth / itemHeight),
-            //     ),
-            //     children: [
-                  // StreamBuilder<QuerySnapshot>(
-                  //   stream: FirebaseFirestore.instance
-                  //       .collection('products')
-                  //       .snapshots(),
-                  //   builder: (context, snapshot) {
-                  //     if (snapshot.hasData) {
-                  //       return ListView.builder(
-                  //           itemCount: snapshot.data!.docs.length,
-                  //           itemBuilder: (context, index) {
-                  //             DocumentSnapshot doc = snapshot.data!.docs[index];
-                  //             return Text(doc['name']);
-                  //           });
-                  //     } else {
-                  //       return Text("No data");
-                  //     }
-                  //   },
-                  // ),
-                 child: StreamBuilder<QuerySnapshot>(
-                    stream: FirebaseFirestore.instance
-                        .collection('products')
-                        .snapshots(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return ListView.builder(
-                            itemCount: snapshot.data!.docs.length,
-                            itemBuilder: (context, index) {
-                              DocumentSnapshot doc = snapshot.data!.docs[index];
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).pushNamedAndRemoveUntil(
-                                      '/productdesc', (route) => true);
-                                },
-                                child: Card(
-                                  child: Column(
-                                    children: [
-                                      Stack(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                            child: Container(
-                                                color: Colors.brown,
-                                                child: Image.asset(
-                                                  'assets/psych.jpeg',
-                                                  fit: BoxFit.cover,
-                                                )),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: CircleAvatar(
-                                              child: Text('1%'),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10),
-                                        child: Text(doc['name'],
-                                            style: genderstyle),
-                                      ),
-                                      Text(price),
-                                      ListTile(
-                                        leading: Icon(Icons.shopping_cart),
-                                        trailing: Icon(Icons.favorite),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              );
-                            });
-                      } else {
-                        return Text("No data");
-                      }
-                    },
+        child: StreamBuilder<QuerySnapshot>(
+          stream: FirebaseFirestore.instance.collection('products').snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: (itemWidth / itemHeight),
                   ),
-                  // GestureDetector(
-                  //   onTap: _onPressed,
-                  //   // () {
-                  //   //    Navigator.of(context)
-                  //   //     .pushNamedAndRemoveUntil('/productdesc', (route) => true);
-                  //   // },
-                  //   child: Card(
-                  //     child: Column(
-                  //       children: [
-                  //         Stack(
-                  //           children: [
-                  //             ClipRRect(
-                  //               borderRadius: BorderRadius.circular(12.0),
-                  //               child: Container(
-                  //                   color: Colors.brown,
-                  //                   child: Image.asset(
-                  //                     'assets/psych.jpeg',
-                  //                     fit: BoxFit.cover,
-                  //                   )),
-                  //             ),
-                  //             Padding(
-                  //               padding: const EdgeInsets.all(8.0),
-                  //               child: CircleAvatar(
-                  //                 child: Text('1%'),
-                  //               ),
-                  //             )
-                  //           ],
-                  //         ),
-                  //         Padding(
-                  //           padding: const EdgeInsets.only(left: 10),
-                  //           child: Text(
-                  //               'Instant Biryani Mix | 100% Natural Millet Breakfast Mix',
-                  //               style: genderstyle),
-                  //         ),
-                  //         Text(''),
-                  //         //Text(snapshot.data.documents[index].get("Name")),
-                  //         ListTile(
-                  //           leading: Icon(Icons.shopping_cart),
-                  //           trailing: Icon(Icons.favorite),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-            //     ],
-            //   ),
-            // ),
-        //   ],
-        // ),
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, index) {
+                    DocumentSnapshot doc = snapshot.data!.docs[index];
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            '/productdesc', (route) => true);
+                      },
+                      child: Card(
+                        child: Column(
+                          children: [
+                            Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  child: Container(
+                                      color: Colors.brown,
+                                      child: Image.asset(
+                                        'assets/psych.jpeg',
+                                        fit: BoxFit.cover,
+                                      )),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: CircleAvatar(
+                                    child: Text(doc['disc']),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(doc['name'], style: genderstyle),
+                            ),
+                            Text(doc['price']),
+                            ListTile(
+                              leading: Icon(Icons.shopping_cart),
+                              trailing: Icon(Icons.favorite),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  });
+            } else {
+              return Text("No Data Found");
+            }
+          },
+        ),     
       ),
     );
   }
