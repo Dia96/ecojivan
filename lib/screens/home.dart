@@ -82,6 +82,22 @@ class Home extends StatelessWidget {
                   ),
                 ),
 
+                Card(
+                  elevation: 5,
+                  color: backColor,
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.report,
+                      color: buttonColor,
+                    ),
+                    title: Text('Steps Tracker'),
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/step', (route) => true);
+                    },
+                  ),
+                ),
+
                  Card(
                   elevation: 5,
                   color: backColor,
