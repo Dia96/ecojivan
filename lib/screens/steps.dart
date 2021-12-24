@@ -142,7 +142,7 @@ class _StepTrackerState extends State<StepTracker> {
   Widget build(BuildContext context) {
     return  Scaffold(
           appBar: AppBar(
-            title: const Text('Plugin example app'),
+            title: const Text(''),
             actions: <Widget>[
               IconButton(
                 icon: Icon(Icons.file_download),
