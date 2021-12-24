@@ -519,8 +519,8 @@ class Home extends StatelessWidget {
                   child: Carousel(
                     images: [
                       ExactAssetImage("assets/images.jpeg"),
-                      ExactAssetImage(""),
-                      ExactAssetImage("")
+                      ExactAssetImage("assets/images.jpeg"),
+                      ExactAssetImage("assets/images.jpeg")
                     ],
                   )),
             ],
