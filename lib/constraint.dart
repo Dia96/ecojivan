@@ -132,7 +132,7 @@ var docname = 'Dr. Name of Doctor';
 var consult = 'CONSULT DOCTOR';
 var more = 'KNOW MORE';
 var price = '₹ 999';
-var exp = '7 years exp';
+var exp = ' years exp';
 var designation = 'Physician - MBBS/MD(Gen Med)';
 var name = 'Name';
 var create = 'Create your Account';
@@ -148,7 +148,7 @@ var diet3 = 'Lunch';
 var diet4 = 'Evening Snacks';
 var diet5 = 'Dinner';
 var cal = '730 cal';
-var product = 'Instant Biryani Mix | 100% Natural Millet Breakfast Mix';
+var noproduct = 'No Data Found';
 var quantity = 'Quantity';
 var foodname = 'Dish Name';
 var nutrition = 'Nutritional Chart';
@@ -253,5 +253,8 @@ var thyroid = 'Thyroid Problems';
 
 
 var dummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+
+
 
 

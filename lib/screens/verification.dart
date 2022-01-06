@@ -103,10 +103,32 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationID, smsCode: otpController.text);
 
     await auth.signInWithCredential(credential).then((value){
+      //Firebase
       print("You are logged in successfully");
 
        Navigator.of(context).pushNamedAndRemoveUntil(
                               '/register', (route) => false);
+
+
+
+
+  //                             Future<void> logOut(BuildContext context) async {
+  //   try {
+  //     final User firebaseUser = await FirebaseAuth.instance.currentUser;
+       
+  //     if (firebaseUser != null) {
+  //         FirebaseAuth.instance.signOut().then((value) => {
+  //           Navigator.of(context).pushNamedAndRemoveUntil(
+  //                             '/verification', (route) => false),
+  //         });
+  //     }
+  //   } catch (e) {
+  //     print(e); // TODO: show dialog with error
+  //   }
+  // }
+
+
+
 
 
       // Fluttertoast.showToast(

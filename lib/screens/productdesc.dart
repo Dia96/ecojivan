@@ -28,7 +28,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
               Image.asset('assets/psych.jpeg'),
               Align(
                 alignment: Alignment.center,
-                child: Text(product, style: namestyle)),          
+                child: Text('product', style: namestyle)),          
               Text(dummy),
               Text('Price : $price', style: bold,),
               SizedBox(height: 20),

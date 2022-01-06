@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:ecojivan/screens/bottomnav.dart';
 import 'package:ecojivan/screens/consult.dart';
 import 'package:ecojivan/screens/cuisines.dart';
-import 'package:ecojivan/screens/date.dart';
 import 'package:ecojivan/screens/diet.dart';
 import 'package:ecojivan/screens/doctors.dart';
 import 'package:ecojivan/screens/edit.dart';
@@ -47,7 +46,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => SplashScreen(),
-        '/verification': (context) => Verification(),
+        '/verification': (context) => LoginWithPhone(),
         '/register': (context) => Registration(),
         '/rtwo': (context) => RegistrationTwo(),
         '/payments': (context) => Payment(),
