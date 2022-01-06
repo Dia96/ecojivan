@@ -84,6 +84,7 @@ flutter:
   assets:
     - assets/images.jpeg
     - assets/logo.png
+    - assets/elogo.png
     - assets/workout.jpeg
     - assets/diet.jpeg
     - assets/recipe.jpeg

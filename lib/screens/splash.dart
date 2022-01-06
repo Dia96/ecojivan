@@ -20,7 +20,11 @@ void initState() {
 Widget build(BuildContext context) {
 	return Container(
 	color: TertiaryColor,
-	child:FlutterLogo(size:MediaQuery.of(context).size.height)
+	//child:FlutterLogo(size:MediaQuery.of(context).size.height)
+  child: Padding(
+    padding: paddingall,
+    child: Image(image: AssetImage('assets/elogo.png')),
+  ),
 	);
 }
 }
