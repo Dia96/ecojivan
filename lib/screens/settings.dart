@@ -1,4 +1,5 @@
 import 'package:ecojivan/constraint.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
 
@@ -10,6 +11,14 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+Future<void> _signOut() async {
+    await _auth.signOut();
+    print("Logged out successfully");
+     Navigator.of(context).pushNamedAndRemoveUntil(
+                                '/', (route) => true);
+  }
   @override
   Widget build(BuildContext context) {
     bool _value = true;
@@ -111,8 +120,9 @@ class _SettingsState extends State<Settings> {
               ),
 
             ElevatedButton(onPressed: () {
-              // Navigator.of(context)
-              //               .pushNamedAndRemoveUntil('/test', (route) => true);
+              _signOut();
+                            // Navigator.of(context).pushNamedAndRemoveUntil(
+                            //     '/verification', (route) => true);
             }, 
             child: Text('Sign out')
             ),
