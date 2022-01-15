@@ -25,46 +25,43 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
     return Container(
       decoration: gradientdecoration,
       child: Scaffold(
-      backgroundColor: Colors.transparent,
-       
+        backgroundColor: Colors.transparent,
         body: Container(
           margin: EdgeInsets.all(10),
           child: Column(
-             mainAxisAlignment: MainAxisAlignment.end,
-             crossAxisAlignment: CrossAxisAlignment.center,
-           // mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
                 controller: phoneController,
                 decoration: InputDecoration(
-                        labelText: "Phone number",
-                        
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-               
-               
+                  labelText: "Phone number",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+
                 // decoration: InputDecoration(
                 //   labelText: "Phone number"),
                 keyboardType: TextInputType.phone,
               ),
-
-              Visibility(child: TextField(
-                controller: otpController,
-                decoration: InputDecoration(),
-                keyboardType: TextInputType.number,
-              ),visible: otpVisibility,),
-
+              Visibility(
+                child: TextField(
+                  controller: otpController,
+                  decoration: InputDecoration(),
+                  keyboardType: TextInputType.number,
+                ),
+                visible: otpVisibility,
+              ),
               SizedBox(
                 height: 10,
               ),
               ElevatedButton(
                   onPressed: () {
-                    if(otpVisibility){
+                    if (otpVisibility) {
                       verifyOTP();
-                    }
-                    else {
+                    } else {
                       loginWithPhone();
                     }
                   },
@@ -80,56 +77,110 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
     auth.verifyPhoneNumber(
       phoneNumber: phoneController.text,
       verificationCompleted: (PhoneAuthCredential credential) async {
-        await auth.signInWithCredential(credential).then((value){
-          print("You are logged in successfully");
+        await auth.signInWithCredential(credential).then((value) {
+          print("----------------------------------------------------");
+          print("verificationCompleted");
+          print("----------------------------------------------------");
+          // print("You are logged in successfully");
         });
       },
       verificationFailed: (FirebaseAuthException e) {
         print(e.message);
+        print("----------------------------------------------------");
+        print("verificationCompleted");
+        print("----------------------------------------------------");
       },
       codeSent: (String verificationId, int? resendToken) {
         otpVisibility = true;
         verificationID = verificationId;
         setState(() {});
+        print("----------------------------------------------------");
+        print("codeSent");
+        print("----------------------------------------------------");
       },
       codeAutoRetrievalTimeout: (String verificationId) {
-
+        print("----------------------------------------------------");
+        print("Autocode retrieval ");
+        print("----------------------------------------------------");
       },
     );
   }
 
   void verifyOTP() async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationID, smsCode: otpController.text);
 
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationID, smsCode: otpController.text);
-
-    await auth.signInWithCredential(credential).then((value){
+    await auth.signInWithCredential(credential).then((value) {
       //Firebase
+      
+      print("----------------------------------------------------");
+      print(value);
+      if (value.additionalUserInfo!.isNewUser) {
+        Navigator.of(context)
+            .pushNamedAndRemoveUntil('/register', (route) => false);
+  // store uid in user provider
+        print('Create new Account');
+      } else {
+        print('Already registered');
+        Navigator.of(context)
+            .pushNamedAndRemoveUntil('/home', (route) => false);
+      }
+      print("----------------------------------------------------");
+
       print("You are logged in successfully");
 
-       Navigator.of(context).pushNamedAndRemoveUntil(
-                              '/register', (route) => false);
+// UserCredential(
+//   additionalUserInfo: AdditionalUserInfo(
+//     isNewUser: false,
+//     profile: {},
+//     providerId: null,
+//     username: null),
+//     credential: null,
+//     user: User(
+//       displayName: null,
+//       email: null,
+//       emailVerified: false,
+//       isAnonymous: false,
+//       metadata: UserMetadata(
+//         creationTime: 2021-12-23 16:49:44.757,
+//         lastSignInTime: 2022-01-09 02:07:19.866
+//       ),
+//     phoneNumber: +911111111111,
+//     photoURL: null,
+//     providerData,
+//     [
+//       UserInfo(
+//         displayName: null,
+//         email: null,
+//         phoneNumber: +911111111111,
+//         photoURL: null,
+//         providerId: phone,
+//         uid: null
+//       )
+//     ],
+//     refreshToken: ,
+//     tenantId: null,
+//     uid: bxNHihUyyNdoqgsqRFx0mvxa4B42
+//     )
+//   )
 
+      Navigator.of(context)
+          .pushNamedAndRemoveUntil('/register', (route) => false);
 
+      //                             Future<void> logOut(BuildContext context) async {
+      //   try {
+      //     final User firebaseUser = await FirebaseAuth.instance.currentUser;
 
-
-  //                             Future<void> logOut(BuildContext context) async {
-  //   try {
-  //     final User firebaseUser = await FirebaseAuth.instance.currentUser;
-       
-  //     if (firebaseUser != null) {
-  //         FirebaseAuth.instance.signOut().then((value) => {
-  //           Navigator.of(context).pushNamedAndRemoveUntil(
-  //                             '/verification', (route) => false),
-  //         });
-  //     }
-  //   } catch (e) {
-  //     print(e); // TODO: show dialog with error
-  //   }
-  // }
-
-
-
-
+      //     if (firebaseUser != null) {
+      //         FirebaseAuth.instance.signOut().then((value) => {
+      //           Navigator.of(context).pushNamedAndRemoveUntil(
+      //                             '/verification', (route) => false),
+      //         });
+      //     }
+      //   } catch (e) {
+      //     print(e); // TODO: show dialog with error
+      //   }
+      // }
 
       // Fluttertoast.showToast(
       //     msg: "You are logged in successfully",
@@ -150,7 +201,6 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 //           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 //         },
 
-
 // import 'package:flutter/material.dart';
 // import 'package:pin_entry_text_field/pin_entry_text_field.dart';
 // import 'package:the_country_number_widgets/the_country_number_widgets.dart';
@@ -164,13 +214,8 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 
 // class _VerificationState extends State<Verification> {
 
-  
-
-
-
-
 //   var _showOtp;
-  
+
 //   @override
 //   void initState() {
 //     _showOtp = false;
@@ -221,7 +266,7 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 //                 ),
 //               ),
 //               Visibility(
-               
+
 //                 child: Column(
 //                   children: [
 //                     Text(enterotp, style: otpverify),
@@ -238,8 +283,8 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 //                           //         title: Text("Pin"),
 //                           //         content: Text('Pin entered is $pin'),
 //                           //       );
-//                           //     }); 
-//                         }, 
+//                           //     });
+//                         },
 //                       ),
 //                     ),
 //                   ],
@@ -253,9 +298,3 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 //     );
 //   }
 // }
-
-
-
-
-
-
