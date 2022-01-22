@@ -1,4 +1,5 @@
 import 'package:ecojivan/constraint.dart';
+import 'package:ecojivan/views/pages/registertwo.dart';
 import 'package:flutter/material.dart';
 import 'package:multiselectchipgroup/multiselectchipgroup.dart';
 
@@ -29,16 +30,12 @@ class _RegistrationState extends State<Registration> {
                   padding: regpadding,
                   child: Text(create, style: bold),
                 ),
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(name, style: namestyle)),
+                Align(alignment: Alignment.topLeft, child: Text(name, style: namestyle)),
                 Padding(
                   padding: bottom,
                   child: TextField(),
                 ),
-                Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(email, style: namestyle)),
+                Align(alignment: Alignment.topLeft, child: Text(email, style: namestyle)),
                 Padding(
                   padding: bottom,
                   child: TextField(),
@@ -83,12 +80,11 @@ class _RegistrationState extends State<Registration> {
                     Flexible(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [                         
-                            Text(
-                              '$height (in cm)',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ),                      
+                        children: [
+                          Text(
+                            '$height (in cm)',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                           Container(
                             height: 50,
                             width: 100,
@@ -107,12 +103,11 @@ class _RegistrationState extends State<Registration> {
                     Flexible(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [                         
-                            Text(
-                              '$weigh (in kg)',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ),                     
+                        children: [
+                          Text(
+                            '$weigh (in kg)',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                           Container(
                             height: 50,
                             width: 100,
@@ -131,12 +126,11 @@ class _RegistrationState extends State<Registration> {
                     Flexible(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [                         
-                            Text(
-                              age,
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ),                      
+                        children: [
+                          Text(
+                            age,
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                           Container(
                             height: 50,
                             width: 100,
@@ -276,11 +270,11 @@ class _RegistrationState extends State<Registration> {
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushNamedAndRemoveUntil('/rtwo', (route) => true);
+                        // Navigator.of(context).pushNamedAndRemoveUntil('/rtwo', (route) => true);
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegistrationTwo()));
                       },
                       label: Text(next),
-                      icon: Icon(Icons.arrow_right),
+                      icon: const Icon(Icons.arrow_right),
                     ),
                   ),
                 ),

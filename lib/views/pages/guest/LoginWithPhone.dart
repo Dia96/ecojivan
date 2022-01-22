@@ -1,5 +1,8 @@
 import 'package:ecojivan/constraint.dart';
+import 'package:ecojivan/views/pages/authenticated/HomeIndex.dart';
+import 'package:ecojivan/views/pages/registration.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 
@@ -27,7 +30,7 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,27 +48,26 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
                 // decoration: InputDecoration(
                 //   labelText: "Phone number"),
                 keyboardType: TextInputType.phone,
+                maxLength: 10,
               ),
               Visibility(
                 child: TextField(
                   controller: otpController,
-                  decoration: InputDecoration(),
                   keyboardType: TextInputType.number,
                 ),
                 visible: otpVisibility,
               ),
-              SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               ElevatedButton(
-                  onPressed: () {
-                    if (otpVisibility) {
-                      verifyOTP();
-                    } else {
-                      loginWithPhone();
-                    }
-                  },
-                  child: Text(otpVisibility ? "Verify" : "Login")),
+                onPressed: () {
+                  if (otpVisibility) {
+                    verifyOTP();
+                  } else {
+                    loginWithPhone();
+                  }
+                },
+                child: Text(otpVisibility ? "Verify" : "Login"),
+              ),
             ],
           ),
         ),
@@ -75,7 +77,7 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 
   void loginWithPhone() async {
     auth.verifyPhoneNumber(
-      phoneNumber: phoneController.text,
+      phoneNumber: '+91${phoneController.text}',
       verificationCompleted: (PhoneAuthCredential credential) async {
         await auth.signInWithCredential(credential).then((value) {
           print("----------------------------------------------------");
@@ -107,25 +109,25 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
   }
 
   void verifyOTP() async {
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationID, smsCode: otpController.text);
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationID, smsCode: otpController.text);
 
     await auth.signInWithCredential(credential).then((value) {
       //Firebase
-      
-      print("----------------------------------------------------");
-      print(value);
+
+      // Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Registration()), (route) => false);
+      // print("----------------------------------------------------");
+      // print(value);
       if (value.additionalUserInfo!.isNewUser) {
-        Navigator.of(context)
-            .pushNamedAndRemoveUntil('/register', (route) => false);
-  // store uid in user provider
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Registration()), (route) => false);
+        //   // Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false);
+        //   // store uid in user provider
         print('Create new Account');
       } else {
         print('Already registered');
-        Navigator.of(context)
-            .pushNamedAndRemoveUntil('/home', (route) => false);
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => HomeIndex()), (route) => false);
+        //   // Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
       }
-      print("----------------------------------------------------");
+      // print("----------------------------------------------------");
 
       print("You are logged in successfully");
 
@@ -164,8 +166,7 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 //     )
 //   )
 
-      Navigator.of(context)
-          .pushNamedAndRemoveUntil('/register', (route) => false);
+      Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false);
 
       //                             Future<void> logOut(BuildContext context) async {
       //   try {
