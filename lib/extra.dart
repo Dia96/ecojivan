@@ -207,7 +207,7 @@ runApp(
 	MaterialApp(
 	home: Scaffold(
 		appBar: AppBar(
-		title: Text('GeeksforGeeks'),
+		title: const Text('GeeksforGeeks'),
 		backgroundColor: Colors.greenAccent[400],
 		centerTitle: true,
 		), //AppBar
@@ -224,7 +224,7 @@ runApp(
 				color: Colors.green[100],
 				height: 300,
 				child: Padding(
-					padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+					padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
 					child: Column(
 					children: <Widget>[
 						Image.network(

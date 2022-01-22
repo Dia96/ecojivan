@@ -1,9 +1,9 @@
 import 'package:ecojivan/constraint.dart';
-import 'package:ecojivan/screens/consult.dart';
+import 'package:ecojivan/views/pages/consult.dart';
 import 'package:ecojivan/screens/home.dart';
-import 'package:ecojivan/screens/product.dart';
+import 'package:ecojivan/views/pages/product.dart';
 import 'package:ecojivan/screens/profile.dart';
-import 'package:ecojivan/screens/registration.dart';
+import 'package:ecojivan/views/pages/registration.dart';
 import 'package:ecojivan/screens/upgrade.dart';
 import 'package:flutter/material.dart';
 

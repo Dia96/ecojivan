@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class PsychTherapy extends StatefulWidget {
   const PsychTherapy({ Key? key }) : super(key: key);

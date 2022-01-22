@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class WorkoutList extends StatefulWidget {
   const WorkoutList({Key? key}) : super(key: key);

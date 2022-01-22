@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const PrimaryColor = const Color(0xFF263238);
-const PrimaryColorLight = const Color(0xFFD7CCC8);
-const SecondaryColor = const Color(0xFF78909C);
-const TertiaryColor = const Color(0xFFFFFFFF);
+const PrimaryColor = Color(0xFF263238);
+const PrimaryColorLight = Color(0xFFD7CCC8);
+const SecondaryColor = Color(0xFF78909C);
+const TertiaryColor = Color(0xFFFFFFFF);
 
-const backColor = const Color(0xFFEEEEEE);
+const backColor = Color(0xFFEEEEEE);
 // const PrimaryColor = const Color(0xFFFFFFFF);
-const buttonColor = const Color(0xFF8BC34A);
+const buttonColor = Color(0xFF8BC34A);
 
-const AppColor = const Color(0x73000000);
+const AppColor = Color(0x73000000);
 
 const backgroundgradient = LinearGradient(
   begin: Alignment.centerLeft,
@@ -21,10 +21,10 @@ const backgroundgradient = LinearGradient(
 const countryinput = BoxDecoration(
   color: TertiaryColor,
   borderRadius: BorderRadius.only(
-    topLeft: const Radius.circular(10.0),
-    topRight: const Radius.circular(10.0),
-    bottomLeft: const Radius.circular(10.0),
-    bottomRight: const Radius.circular(10.0),
+    topLeft: Radius.circular(10.0),
+    topRight: Radius.circular(10.0),
+    bottomLeft: Radius.circular(10.0),
+    bottomRight: Radius.circular(10.0),
   ),
 );
 
@@ -44,7 +44,7 @@ const backgrounddecoration = BoxDecoration(gradient: backgroundgradient);
 
 
 const decoration = BoxDecoration(
-  color: const Color(0xFFFFFFFF),
+  color: Color(0xFFFFFFFF),
 );
 
 const gradientdecoration = BoxDecoration(

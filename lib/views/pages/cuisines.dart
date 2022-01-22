@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class Cuisines extends StatefulWidget {
   const Cuisines({Key? key}) : super(key: key);

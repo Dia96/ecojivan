@@ -1,28 +1,26 @@
-import 'dart:async';
-import 'package:ecojivan/screens/bottomnav.dart';
-import 'package:ecojivan/screens/consult.dart';
-import 'package:ecojivan/screens/cuisines.dart';
-import 'package:ecojivan/screens/diet.dart';
-import 'package:ecojivan/screens/doctors.dart';
-import 'package:ecojivan/screens/edit.dart';
-import 'package:ecojivan/screens/healthyrecipe.dart';
-import 'package:ecojivan/screens/indian.dart';
-import 'package:ecojivan/screens/payment.dart';
-import 'package:ecojivan/screens/physiolist.dart';
-import 'package:ecojivan/screens/product.dart';
-import 'package:ecojivan/screens/productdesc.dart';
-import 'package:ecojivan/screens/psych.dart';
-import 'package:ecojivan/screens/recipes.dart';
-import 'package:ecojivan/screens/registertwo.dart';
-import 'package:ecojivan/screens/registration.dart';
-import 'package:ecojivan/screens/reports.dart';
-import 'package:ecojivan/screens/settings.dart';
-import 'package:ecojivan/screens/sliverappbar.dart';
-import 'package:ecojivan/screens/splash.dart';
-import 'package:ecojivan/screens/verification.dart';
-import 'package:ecojivan/screens/workout.dart';
-import 'package:ecojivan/screens/workoutdesc.dart';
-import 'package:ecojivan/screens/workoutlist.dart';
+import 'package:ecojivan/views/pages/bottomnav.dart';
+import 'package:ecojivan/views/pages/consult.dart';
+import 'package:ecojivan/views/pages/cuisines.dart';
+import 'package:ecojivan/views/pages/diet.dart';
+import 'package:ecojivan/views/pages/doctors.dart';
+import 'package:ecojivan/views/pages/edit.dart';
+import 'package:ecojivan/views/pages/healthyrecipe.dart';
+import 'package:ecojivan/views/pages/indian.dart';
+import 'package:ecojivan/views/pages/payment.dart';
+import 'package:ecojivan/views/pages/physiolist.dart';
+import 'package:ecojivan/views/pages/product.dart';
+import 'package:ecojivan/views/pages/productdesc.dart';
+import 'package:ecojivan/views/pages/psych.dart';
+import 'package:ecojivan/views/pages/registertwo.dart';
+import 'package:ecojivan/views/pages/registration.dart';
+import 'package:ecojivan/views/pages/reports.dart';
+import 'package:ecojivan/views/pages/settings.dart';
+import 'package:ecojivan/views/pages/sliverappbar.dart';
+import 'package:ecojivan/views/pages/splash.dart';
+import 'package:ecojivan/views/pages/verification.dart';
+import 'package:ecojivan/views/pages/workout.dart';
+import 'package:ecojivan/views/pages/workoutdesc.dart';
+import 'package:ecojivan/views/pages/workoutlist.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -46,28 +44,28 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => SplashScreen(),
-        '/verification': (context) => LoginWithPhone(),
+        '/verification': (context) => const LoginWithPhone(),
         '/register': (context) => Registration(),
         '/rtwo': (context) => RegistrationTwo(),
-        '/payments': (context) => Payment(),
-        '/settings': (context) => Settings(),
+        '/payments': (context) => const Payment(),
+        '/settings': (context) => const Settings(),
         '/home': (context) => BottomNav(),
-        '/doc': (context) => Doctors(),
-        '/edit': (context) => EditProfile(),
-        '/diet': (context) => Diet(),
+        '/doc': (context) => const Doctors(),
+        '/edit': (context) => const EditProfile(),
+        '/diet': (context) => const Diet(),
         '/sliver': (context) => MainCollapsingToolbar(),
         '/consult': (context) => Consult(),
-        '/product': (context) => Product(),
+        '/product': (context) => const Product(),
         '/reports': (context) => WeeklyReports(),
-        '/workout': (context) => Workout(),
-        '/workoutlist': (context) => WorkoutList(),
-        '/workoutdesc': (context) => WorkoutDescription(),
-        '/cuisine': (context) => Cuisines(),
-        '/indian': (context) => Indian(),
-        '/healthy': (context) => HealthyRecipe(),
-        '/productdesc': (context) => ProductDescription(),
-        '/physio': (context) => PhysioList(),
-        '/psych': (context) => PsychTherapy(),
+        '/workout': (context) => const Workout(),
+        '/workoutlist': (context) => const WorkoutList(),
+        '/workoutdesc': (context) => const WorkoutDescription(),
+        '/cuisine': (context) => const Cuisines(),
+        '/indian': (context) => const Indian(),
+        '/healthy': (context) => const HealthyRecipe(),
+        '/productdesc': (context) => const ProductDescription(),
+        '/physio': (context) => const PhysioList(),
+        '/psych': (context) => const PsychTherapy(),
        
       },
     );

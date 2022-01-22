@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:multiselectchipgroup/multiselectchipgroup.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class Post {
   final String title;

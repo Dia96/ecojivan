@@ -1,7 +1,7 @@
 import 'package:ecojivan/constraint.dart';
-import 'package:ecojivan/screens/edit.dart';
+import 'package:ecojivan/views/pages/edit.dart';
 import 'package:ecojivan/screens/previousconsult.dart';
-import 'package:ecojivan/screens/registertwo.dart';
+import 'package:ecojivan/views/pages/registertwo.dart';
 import 'package:ecojivan/screens/subscription.dart';
 import 'package:ecojivan/screens/task.dart';
 import 'package:flutter/material.dart';

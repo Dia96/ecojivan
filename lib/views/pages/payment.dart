@@ -1,7 +1,7 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);

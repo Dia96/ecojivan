@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class Indian extends StatefulWidget {
   const Indian({Key? key}) : super(key: key);

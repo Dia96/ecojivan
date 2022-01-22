@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-import '../constraint.dart';
+import '../../constraint.dart';
 
 class Workout extends StatefulWidget {
   const Workout({Key? key}) : super(key: key);
