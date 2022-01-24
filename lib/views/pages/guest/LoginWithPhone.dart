@@ -68,6 +68,21 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
                 },
                 child: Text(otpVisibility ? "Verify" : "Login"),
               ),
+               SizedBox(height: 10),
+
+              Text('OR', style: TextStyle(fontSize: 15, color: Colors.white),),
+              SizedBox(height: 10),
+
+                   ElevatedButton(
+                onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => HomeIndex()), (route) => false); 
+                },
+                child: Text("GUEST LOGIN"),
+              ),
+               SizedBox(height: 10),
+
+
+
             ],
           ),
         ),
